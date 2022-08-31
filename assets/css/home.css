@@ -3,7 +3,7 @@
 /*Fonts / typography*/
 /*Font Size*/
 /*Barchart*/
-/*NavBar Menu*/
+/*---------NavBar Menu-----------*/
 .header {
   display: flex;
   justify-content: space-around;
@@ -22,7 +22,7 @@
   transition: all 0.6s ease;
 }
 
-/*Slide Menu Phone*/
+/*----------Slide Menu Phone----------*/
 .header__btn_ham {
   display: none;
   width: 25px;
@@ -31,18 +31,18 @@
   transform: translateX(-90px);
 }
 
-/*Logo*/
+/*---------Logo-------------*/
 .header__logo img {
   width: 250px;
   height: 150px;
 }
 
-/*About Menu */
+/*---------About Menu---------*/
 .header__about_menu {
   transform: translateX(100px);
 }
 
-/*Nav*/
+/*-----------Nav----------------*/
 .nav .nav__ul {
   display: flex;
   list-style-type: none;
@@ -93,7 +93,7 @@
   left: 0;
 }
 
-/*Boton para buscar */
+/*----------Boton para buscar------*/
 .header__btn_search {
   display: flex;
   justify-content: center;
@@ -112,7 +112,7 @@
   transition: all 300ms;
 }
 
-/*Username Menu------------------------------------*/
+/*----------Username Menu------*/
 .header__username_menu {
   display: flex;
   justify-content: space-around;
@@ -159,7 +159,84 @@
   z-index: 2;
 }
 
-/*---------------------------*/
+/*---------Footer------------------*/
+.footer {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 500px 400px 500px;
+  grid-template-rows: 50px 100px;
+  column-gap: -40px;
+  width: 100%;
+  height: 250px;
+  margin-top: 80px;
+}
+.footer h1 {
+  font-size: 14px;
+  font-family: "Arvo", serif;
+  font-weight: 200;
+}
+
+.authors {
+  background-color: #65dd75;
+  width: 100%;
+  height: 100%;
+}
+
+.footer__title_address {
+  display: flex;
+  justify-content: center;
+  margin-left: -100px;
+}
+.footer__title_address img {
+  width: 40px;
+  height: 40px;
+}
+
+.footer__address {
+  display: flex;
+  justify-content: center;
+  grid-column: 1/2;
+}
+
+.footer__socialmedia {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  grid-column: 2/3;
+}
+.footer__socialmedia img {
+  width: 35px;
+  height: 30px;
+}
+
+.footer__contactus {
+  display: block;
+  margin: auto;
+}
+.footer__contactus p {
+  display: flex;
+  margin: 20px;
+}
+.footer__contactus img {
+  width: 30px;
+  height: 20px;
+}
+
+/*--------Titulos de los footers-------------*/
+.footer__title_socialmedia {
+  display: flex;
+  justify-content: center;
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.footer__title_contactus {
+  display: flex;
+  justify-content: center;
+  grid-row: 1/2;
+  grid-column: 3/4;
+}
+
 /*Barcharts */
 /*---Lammar los barchart---*/
 body {
