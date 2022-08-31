@@ -1,14 +1,11 @@
+@use 'variable';
 
-/*Var*/
-$primary-color: #65dd75;
-
-/*mixin*/
 
 @mixin format {
 
     body{
-
-        font-family: 'Quicksand', sans-serif;
+        background: red;
+        font-family: variable.$title;
         margin: 0;
         padding: 0;
         text-decoration: none;
@@ -18,8 +15,4 @@ $primary-color: #65dd75;
     
     
 }
-
-
-
-
 

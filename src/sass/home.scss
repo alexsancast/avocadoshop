@@ -1,3 +1,4 @@
-body {
-    background-color: red;
-}
+@use 'barchart/reset';
+
+
+@include reset.format;
