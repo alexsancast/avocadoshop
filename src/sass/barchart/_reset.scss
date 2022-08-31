@@ -1,11 +1,8 @@
 @use 'variable';
 
-
 @mixin format {
-
     body{
-        background: red;
-        font-family: variable.$title;
+        font-size: variable.$body-size;
         margin: 0;
         padding: 0;
         text-decoration: none;

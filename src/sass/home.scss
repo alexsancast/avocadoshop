@@ -1,4 +1,9 @@
-@use 'barchart/reset';
+/*Barcharts */
+@use 'barchart/navbar';
+@use 'barchart/reset'; 
+/*---Lammar los barchart---*/
+@include reset.format; // Reseteamos toda la pagina3
 
 
-@include reset.format;
+
+
