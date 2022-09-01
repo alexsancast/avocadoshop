@@ -57,11 +57,17 @@
     grid-column: 2/2;
     grid-row :4/4 ;
    
+   
 
     &:hover{
         background-color: rgb(69, 182, 98);
         cursor: pointer;
 
+    }
+
+    p {
+
+        margin: auto;
     }
     
 }
@@ -80,6 +86,8 @@
    }   
    
 }
+
+/*Atributos del aguacate*/
 
 .container__attributes{
     grid-column: 2/2;
@@ -112,5 +120,12 @@
     grid-column: 3/2;
     grid-row: 1/2;
 }
+
+
+/*loading button*/
+
+// .container__btn_loading .btn__add {
+//     visibility: hidden;
+// }
 
 

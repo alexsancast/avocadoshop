@@ -10,10 +10,10 @@ import {price} from "./validInput_price.js" ;
           const containerAttributes = document.querySelector(".container__attributes");
           //Seleccionar el contenedor de los atributos
     const loadDataDetails =() => {
+      
           //Crear una carta 
           const card = document.createElement ("div");
           card.classList.add("container__card");
-
 
           //Crear div para la cantidad y el boton
           const containerChild = document.createElement("div");
@@ -41,9 +41,14 @@ import {price} from "./validInput_price.js" ;
           price.textContent = priceFormat.formatPrice( itemObject.price) ;
 
           //Anadimos el boton
+    
+          const add = document.createElement('p');
           const button  = document.createElement("button");
+          add.classList.add("btn__add");
+          add.textContent ="Add to cart"
           button.classList.add("container__btn");
-          button.textContent="Add to card";
+          button.classList.add("container__btn_loading");
+         
           
           //Anadimos input para la cantidad 
           const input = document.createElement("input");
@@ -71,6 +76,7 @@ import {price} from "./validInput_price.js" ;
            pTaste.textContent =`${itemObject.attributes.taste}`;
 
           //Insertamos los elementos
+         button.appendChild(add);
          container.appendChild(card);
          card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
          card.appendChild(containerChild);

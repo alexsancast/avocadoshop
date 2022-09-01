@@ -1,0 +1,94 @@
+/*Variables*/
+@use 'barchart/variable';
+
+/*Barcharts */
+@use 'barchart/navbar';
+@use 'barchart/reset'; 
+@use 'barchart/footer';
+/*---Lammar los barchart---*/
+@include reset.format; // Reseteamos toda la pagina
+
+
+
+.container__cards{
+    margin-top: 100px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    position: relative;
+    z-index: 1;
+
+}
+
+.card {
+    margin: 10px;
+    width: 350px;
+    transition: all 300ms;
+
+
+}
+.card:hover{
+    width: 400px;
+  
+}
+
+.card .card__cover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+    
+   
+}
+.card .card__cover img {
+    width: 200px;
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: auto;
+    top: 40px;
+    transition: all 400ms;
+    filter: drop-shadow(5px 5px 4px rgba(0,0,0,0.5));
+
+
+}
+
+.card:hover .card__cover img {
+    top:0px;
+    filter: none;
+}
+
+.card .card__img_back {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top:95px;
+    background-size: cover;
+    border-radius: 20px;
+  
+}
+
+
+.card:nth-last-of-type(1) .card__img_back {
+    background-image: url(/assets/img/aboutus/bg1.jpg);
+}
+
+.card:nth-last-of-type(2) .card__img_back {
+    background-image: url(/assets/img/aboutus/bg2.jpg);
+}
+
+.card .card__description{
+    background: white;
+    margin-top: -17px;
+    padding: 20px;
+    border-radius: 0px 0px 20px 20px;
+    background:#FFFFFF;
+}
+ .card .card__description h2 {
+    font-size: 14px;
+}
+
+.card .card__description .card__img_back img {
+    width: 25px;
+    height: 25px;
+}
