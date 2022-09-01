@@ -1,0 +1,106 @@
+/*Variables*/
+@use 'barchart/variable';
+
+/*Barcharts */
+@use 'barchart/navbar';
+@use 'barchart/reset'; 
+@use 'barchart/footer';
+/*---Lammar los barchart---*/
+@include reset.format; // Reseteamos toda la pagina
+
+
+/*-----Container------*/
+.container{
+    display: flex;
+    margin-top: 150px;
+    justify-content: space-evenly;
+
+        
+    }
+    
+    .directions__title{
+        display:flex ;
+        flex-direction: column;
+        }
+    
+     .container__directions .directions__title > p   {
+            font-size: 40px;
+            font-weight: bold;
+        
+        }
+    
+    .container__directions{
+        display: grid;
+        grid-template-rows: 150px 140px 100px;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 50px;
+        row-gap: 20px;
+    }
+    
+    .directions__title{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    
+    .directions__hours {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
+    .directions__contact{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    
+    .directions__nearme{
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+    
+    .directions__btn{
+        grid-column:2/3 ;
+        grid-row: 3/4;
+    }
+    
+    .btn {
+        background-color:variable.$avocado-color;
+        border: none;
+        border-radius: 4px;
+        color: #fff;
+        font-family: inherit;
+        font-size: 17px;
+        width: 160px;
+        height: 50px;
+    }
+    
+    
+    
+    .container__directions  h2 {
+        font-size: 22px;
+        text-decoration: underline;
+        color:variable.$avocado-color;
+    }
+    
+    .container__directions .directions__h1 {
+        font-size: 25px;
+        color: variable.$avocado-color;
+        font-weight: bold;
+    }
+    
+    
+    
+    .photos{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    
+    .container__photos .photos{
+        width: 500px;
+        height: 300px;
+    
+    }
+    
+    
+    
