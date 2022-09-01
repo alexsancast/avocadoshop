@@ -43,22 +43,18 @@ document.addEventListener("DOMContentLoaded", (e)=> {
 
 
 //Llamar a la api para obetener los datos
-//  async function loadData () {
-//     const apiAvocado = await fetch (`${API}/api/avo`);
-//      const data = await apiAvocado.json();
+ async function loadData () {
+    const apiAvocado = await fetch (`${API}/api/avo`);
+     const data = await apiAvocado.json();
+
+     fillCart(data);
+
+ }
      
 
 
 
-
-//  loadData();
-
-
-
-
-const fillCart = async () => await fetch(`${API}/api/avo`)
-    .then(data => data.json())
-    .then(data => {            
+function fillCart (data) {            
             // const value = document.querySelector('.value');
                 data.data.forEach(element => {
                 search.push(element)
@@ -107,11 +103,13 @@ const fillCart = async () => await fetch(`${API}/api/avo`)
                 // name.addEventListener('click', viewProduct);
                 inputFind.addEventListener('keyup', findAvocado);
                 // button.addEventListener('click', (e) => { addToCart(e, data);});
-            }).catch(Error => console.error(Error));
+                  })
+}
 
 
-        }
-    );
+
+        
+
 
 //Agregar al carrito
 // function addToCart(e, data) {
@@ -274,7 +272,7 @@ function findAvocado () {
 //     }
 // })
 
-fillCart();
+loadData ();
 
 
 
