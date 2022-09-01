@@ -1,4 +1,4 @@
-
+import {price} from "./validInput_price.js" ;
 //LLAMADA A LA API PARA OBTENER LOS DATOS
 const API = 'https://platzi-avo.vercel.app';
 //variables
@@ -7,7 +7,7 @@ let cart = [];
 let onclick = false;
 
 //Instanciamos la clave para el formato de moneda
-// const priceFormat = new price();
+const priceFormat = new price();
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
 // const amount = document.getElementById('amount');//cantidad de productos
@@ -82,8 +82,7 @@ document.addEventListener("DOMContentLoaded", (e)=> {
         //Anadimos el precio del aguacate
         const price = document.createElement("p");
         price.classList.add("container__pricec_card");
-        price.textContent = element.price ;
-        // price.textContent = priceFormat.formatPrice(element.price);
+        price.textContent = priceFormat.formatPrice(element.price);
 
         //Anadimos el boton del aguacate
         const button = document.createElement("button");

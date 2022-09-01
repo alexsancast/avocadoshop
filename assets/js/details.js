@@ -1,10 +1,10 @@
-// import {price} from "./inputValid.js" ;
+import {price} from "./validInput_price.js" ;
     
          const API = 'https://platzi-avo.vercel.app';
          const stringItem =  localStorage.getItem('item')
          const itemObject = JSON.parse(stringItem);
          //Formato de precio
-        //   const priceFormat = new price();
+          const priceFormat = new price();
           //Variables 
           const container = document.querySelector(".container");
           const containerAttributes = document.querySelector(".container__attributes");
@@ -38,8 +38,7 @@
           //Anadimos el precio 
           const price = document.createElement ("p");
           price.classList.add("container__price");
-          price.textContent = itemObject.price;
-        //   price.textContent = priceFormat.formatPrice( itemObject.price) ;
+          price.textContent = priceFormat.formatPrice( itemObject.price) ;
 
           //Anadimos el boton
           const button  = document.createElement("button");
