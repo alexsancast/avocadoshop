@@ -96,9 +96,8 @@ document.addEventListener("DOMContentLoaded", (e)=> {
         card.append(img, name, description, price, button);
 
         //Eventos con los botones
-        // card.addEventListener('click', (e) => {viewProduct(e)});
-        // name.addEventListener('click', viewProduct);
-       
+        card.addEventListener('click', (e) => {viewProduct(e)});
+        name.addEventListener('click', viewProduct);
         // button.addEventListener('click', (e) => { addToCart(e, data);});
           })
 }
@@ -130,29 +129,24 @@ document.addEventListener("DOMContentLoaded", (e)=> {
 // }
 
 // //FUNCION PARA VER EL DETALLE DEL PRODUCTO
-// function viewProduct(e) {
-//     if (e.target.classList.contains('card') || e.target.classList.contains('name-aguacate')) {
-//         const id = e.target.dataset.id;
-//         fetch(`${API}/api/avo/${id}`).then(prueba => prueba.json())
-//             .then(data => {
-//                     e.preventDefault();
-//                     localStorage.setItem('item', JSON.stringify(data));
-//                     window.location.href = '/public/details.html';
+function viewProduct(e) {
+    if (e.target.classList.contains('container__card') || e.target.classList.contains('container__name_card')) {
+        const id = e.target.dataset.id;
+         fetch(`${API}/api/avo/${id}`).then(prueba => prueba.json())
+            .then(data => {
+                    e.preventDefault();
+                    localStorage.setItem('item', JSON.stringify(data));
+                    window.location.href = '/public/details.html';
+                }
+            ).catch(err => {
+            console.log(err)
+        });
+
+   
+    }
 
 
-//                     // Turbolinks.visit =('/public/details.html');
-
-
-//                 }
-//             ).catch(err => {
-//             console.log(err)
-//         });
-
-
-//     }
-
-
-// }
+}
 
 // //Funcion para buscar los aguacates
 inputFind.addEventListener( 'keyup' , ()=>{
