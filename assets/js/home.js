@@ -35,9 +35,6 @@ document.addEventListener("DOMContentLoaded", (e)=> {
 //     onclick = false;
 // }
 
-
-
-
 // });//PONE VISIBLE EL DETALLE DEL CARRITO
 
 
@@ -46,70 +43,65 @@ document.addEventListener("DOMContentLoaded", (e)=> {
  async function loadData () {
     const apiAvocado = await fetch (`${API}/api/avo`);
      const data = await apiAvocado.json();
-
      fillCart(data);
 
  }
-     
+    
 
 
 
-function fillCart (data) {            
-            // const value = document.querySelector('.value');
-                data.data.forEach(element => {
-                search.push(element)
-                //Creamos las cartas que estaran dentro del container
-                const card = document.createElement("div");
-                card.classList.add("container__card");
-                card.dataset.id = element.id;
+// Funcion para llenar las carts
+ function fillCart (data) {            
+    // const value = document.querySelector('.value');
+        data.data.forEach(element => {
+        search.push(element)
+        //Creamos las cartas que estaran dentro del container
+        const card = document.createElement("div");
+        card.classList.add("container__card");
+        card.dataset.id = element.id;
 
-                //Adanimos la imagen de aguacate en la carta
-                const img = document.createElement("img");
-                img.classList.add("container__img_card");
-                img.src = `${API}${element.image}`;
-                img.dataset.id = element.id;
+        //Adanimos la imagen de aguacate en la carta
+        const img = document.createElement("img");
+        img.classList.add("container__img_card");
+        img.src = `${API}${element.image}`;
+        img.dataset.id = element.id;
 
-                //Adanimos el nombre del aguacate
-                const name = document.createElement("h2");
-                name.classList.add("container__name_card");
-                name.textContent = `${element.name}`;
-                name.dataset.id = element.id;
-
-
-                //Anadimos la descripcion del aguacate
-                const description = document.createElement("small")
-                description.classList.add("container__desc_card");
-                description.textContent = (`${element.attributes.description}`);
+        //Adanimos el nombre del aguacate
+        const name = document.createElement("h2");
+        name.classList.add("container__name_card");
+        name.textContent = `${element.name}`;
+        name.dataset.id = element.id;
 
 
-                //Anadimos el precio del aguacate
-                const price = document.createElement("p");
-                price.classList.add("container__pricec_card");
-                price.textContent = element.price ;
-                // price.textContent = priceFormat.formatPrice(element.price);
+        //Anadimos la descripcion del aguacate
+        const description = document.createElement("small")
+        description.classList.add("container__desc_card");
+        description.textContent = (`${element.attributes.description}`);
 
-                //Anadimos el boton del aguacate
-                const button = document.createElement("button");
-                button.classList.add("container__btn_card");
-                button.textContent = "Add";
-                button.dataset.id = element.id;
 
-                //Lo inyectamos en el doc html
-                container.appendChild(card);
-                card.append(img, name, description, price, button);
+        //Anadimos el precio del aguacate
+        const price = document.createElement("p");
+        price.classList.add("container__pricec_card");
+        price.textContent = element.price ;
+        // price.textContent = priceFormat.formatPrice(element.price);
 
-                //Eventos con los botones
-                // card.addEventListener('click', (e) => {viewProduct(e)});
-                // name.addEventListener('click', viewProduct);
-                inputFind.addEventListener('keyup', findAvocado);
-                // button.addEventListener('click', (e) => { addToCart(e, data);});
-                  })
+        //Anadimos el boton del aguacate
+        const button = document.createElement("button");
+        button.classList.add("container__btn_card");
+        button.textContent = "Add";
+        button.dataset.id = element.id;
+
+        //Lo inyectamos en el doc html
+        container.appendChild(card);
+        card.append(img, name, description, price, button);
+
+        //Eventos con los botones
+        // card.addEventListener('click', (e) => {viewProduct(e)});
+        // name.addEventListener('click', viewProduct);
+       
+        // button.addEventListener('click', (e) => { addToCart(e, data);});
+          })
 }
-
-
-
-        
-
 
 //Agregar al carrito
 // function addToCart(e, data) {
@@ -163,40 +155,45 @@ function fillCart (data) {
 // }
 
 // //Funcion para buscar los aguacates
-function findAvocado () {
-    //Variables
-    results.innerHTML='';
-    results.style.display = "block";
-    const text = inputFind.value.toLowerCase(); //Lo llevamos a minusculas
-    const namesAvocados = newArrayAvocado(); // Tomamos el nuevo array
-    ///////
-    function newArrayAvocado (){
+inputFind.addEventListener( 'keyup' , ()=>{
 
-        let newAvocados = []
-        search.forEach(element =>{
-               newAvocados.push(element.name);
-              
-        }  ); return newAvocados;
+        //Variables
+        results.innerHTML='';
+        results.style.display = "block";
+        const text = inputFind.value.toLowerCase(); //Lo llevamos a minusculas
+        const namesAvocados = newArrayAvocado(); // Tomamos el nuevo array
+        ///////
+        function newArrayAvocado (){
     
+            let newAvocados = []
+            search.forEach(element =>{
+                   newAvocados.push(element.name);
+                  
+            }  ); return newAvocados;
+        
+                
+        }
+        
+         namesAvocados.forEach(name =>{ 
+            let aguacate = name.toLowerCase();
+            if (aguacate.indexOf(text) !== -1){
+    
+                results.innerHTML += `<li><a href=""> <i  class="fa-solid fa-magnifying-glass " ></i>${name}</a> </li>` 
+    
+            }
             
-    }
-    
-     namesAvocados.forEach(name =>{ 
-        let aguacate = name.toLowerCase();
-        if (aguacate.indexOf(text) !== -1){
-
-            results.innerHTML += `<li><a href=""> <i  class="fa-solid fa-magnifying-glass " ></i>${name}</a> </li>` 
-
-        }
+            if (inputFind.value ==''){
+                results.style.display = "none";
         
-        if (inputFind.value ==''){
-            results.style.display = "none";
-    
-        }
+            }
+            
+         })    
         
-     })    
-    
-};
+
+
+})  
+
+
 
 // //FUNCION PARA IMPRIMIR EL CARRITO
 // const printCarShop = (data) => {
