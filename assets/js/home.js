@@ -20,8 +20,6 @@ const results  = document.querySelector('.results'); //Resultados para la busque
 // const barMenu = document.querySelector(".img-bar"); // Barra para mostrar el menu lateral
 // const asideMenu = document.querySelector(".about-menu-aside"); // menu leteral
 // const closeBar = document.querySelector(".img-close");
-
-
 document.addEventListener("DOMContentLoaded", (e)=> {
     element.style.visibility = "hidden";
 
@@ -44,14 +42,26 @@ document.addEventListener("DOMContentLoaded", (e)=> {
 
 
 
-//Funcion para mostar los aguacates
+//Llamar a la api para obetener los datos
+//  async function loadData () {
+//     const apiAvocado = await fetch (`${API}/api/avo`);
+//      const data = await apiAvocado.json();
+     
+
+
+
+
+//  loadData();
+
+
+
 
 const fillCart = async () => await fetch(`${API}/api/avo`)
     .then(data => data.json())
     .then(data => {            
             // const value = document.querySelector('.value');
                 data.data.forEach(element => {
-                // search.push(element)
+                search.push(element)
                 //Creamos las cartas que estaran dentro del container
                 const card = document.createElement("div");
                 card.classList.add("container__card");
@@ -161,7 +171,6 @@ function findAvocado () {
     results.style.display = "block";
     const text = inputFind.value.toLowerCase(); //Lo llevamos a minusculas
     const namesAvocados = newArrayAvocado(); // Tomamos el nuevo array
-   
     ///////
     function newArrayAvocado (){
 
@@ -187,13 +196,7 @@ function findAvocado () {
     
         }
         
-     })
-
-  
-  
-   
-
-    
+     })    
     
 };
 

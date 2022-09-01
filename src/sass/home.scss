@@ -9,9 +9,7 @@
 @include reset.format; // Reseteamos toda la pagina
 
 
-
 /*Buscador*/
-
 .search_menu {
     position: fixed;
     top: -70px;
@@ -57,7 +55,6 @@
     margin: auto;
     background:white;
     z-index: 10;
-    overflow: hidden;
     display: none;
    
     
@@ -65,7 +62,7 @@
 
 .results li a   {
     display: block ;
-    width: 1200px;
+    width: 1160px;
     color: #777777;
     padding: 12px 20px;
     text-decoration: none;
