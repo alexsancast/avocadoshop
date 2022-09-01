@@ -241,4 +241,99 @@
   grid-column: 3/4;
 }
 
+.container {
+  margin-top: 60px;
+}
+
+.container__card {
+  display: grid;
+  grid-template-columns: 350px 450px;
+  grid-template-rows: 60px 1fr 60px 1px 60px;
+  column-gap: 65px;
+  row-gap: 15px;
+  justify-content: center;
+  margin-bottom: 200px;
+}
+.container__card img {
+  width: 450px;
+  height: 450px;
+}
+
+.container__name {
+  grid-column: 2/2;
+}
+
+.container__desc {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  font-size: var(--lg);
+  color: rgb(132, 126, 126);
+}
+
+.container__price {
+  grid-column: 2/2;
+  grid-row: 3/3;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container__btn {
+  background-color: #65dd75;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  width: 100px;
+  height: 35px;
+  grid-column: 2/2;
+  grid-row: 4/4;
+}
+.container__btn:hover {
+  background-color: rgb(69, 182, 98);
+  cursor: pointer;
+}
+
+.container__add_amount {
+  grid-column: 2/2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.container__add_amount input {
+  width: 50px;
+  height: 25px;
+}
+
+.container__attributes {
+  grid-column: 2/2;
+  grid-row: 5/5;
+}
+
+.container__attributes {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 100px 170px;
+  grid-template-rows: 50px 50px 50px;
+}
+
+.container__attributes h1 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.container__attributes .hardinessh {
+  grid-column: 1/2;
+}
+
+.container__attributes .tasteh {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.container__attributes .pshape {
+  grid-column: 3/2;
+  grid-row: 1/2;
+}
+
 /*# sourceMappingURL=details.css.map */

@@ -1,23 +1,19 @@
 // import {price} from "./inputValid.js" ;
     
-    const API = 'https://platzi-avo.vercel.app';
-
-        const stringItem =  localStorage.getItem('item')
+         const API = 'https://platzi-avo.vercel.app';
+         const stringItem =  localStorage.getItem('item')
          const itemObject = JSON.parse(stringItem);
          //Formato de precio
         //   const priceFormat = new price();
-          // //Seleccionar el contenedor***
+          //Variables 
           const container = document.querySelector(".container");
-          //Seleccionar el contenedor de los atributos
           const containerAttributes = document.querySelector(".container__attributes");
-
-         const loadDataDetails =() => {
-        
-
+          //Seleccionar el contenedor de los atributos
+    const loadDataDetails =() => {
           //Crear una carta 
           const card = document.createElement ("div");
           card.classList.add("container__card");
-          
+
 
           //Crear div para la cantidad y el boton
           const containerChild = document.createElement("div");
@@ -83,7 +79,9 @@
          card.appendChild(containerAttributes);
          containerChild.append(input,button);
          
-         //Eventos 
+       
+         
+         
          
 
          
