@@ -262,11 +262,13 @@ body {
 .directions__title {
   display: flex;
   flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-bottom: 20px;
 }
-
-.container__directions .directions__title > p {
-  font-size: 40px;
-  font-weight: bold;
+.directions__title img {
+  width: 130px;
+  height: 130px;
 }
 
 .container__directions {
@@ -275,11 +277,6 @@ body {
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
   row-gap: 20px;
-}
-
-.directions__title {
-  grid-column: 1/2;
-  grid-row: 1/2;
 }
 
 .directions__hours {
@@ -317,12 +314,6 @@ body {
   font-size: 22px;
   text-decoration: underline;
   color: #65dd75;
-}
-
-.container__directions .directions__h1 {
-  font-size: 25px;
-  color: #65dd75;
-  font-weight: bold;
 }
 
 .photos {

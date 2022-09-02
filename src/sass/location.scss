@@ -18,16 +18,22 @@
         
     }
     
-    .directions__title{
-        display:flex ;
-        flex-direction: column;
+.directions__title{
+     display:flex ;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    
+    margin-bottom: 20px;
+     
+    img {
+         width:  130px;
+         height: 130px;
+            
+        }
+
         }
     
-     .container__directions .directions__title > p   {
-            font-size: 40px;
-            font-weight: bold;
-        
-        }
     
     .container__directions{
         display: grid;
@@ -37,10 +43,6 @@
         row-gap: 20px;
     }
     
-    .directions__title{
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
     
     .directions__hours {
         grid-column: 1/2;
@@ -79,12 +81,6 @@
         font-size: 22px;
         text-decoration: underline;
         color:variable.$avocado-color;
-    }
-    
-    .container__directions .directions__h1 {
-        font-size: 25px;
-        color: variable.$avocado-color;
-        font-weight: bold;
     }
     
     
