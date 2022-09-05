@@ -115,6 +115,9 @@
   cursor: pointer;
   transition: all 300ms;
 }
+.header__btn_search:hover {
+  background-color: rgb(69, 182, 98);
+}
 
 /*----------Username Menu------*/
 .header__username_menu {
@@ -323,6 +326,11 @@ body {
 }
 
 .card .card__description .card__img_back img {
+  width: 25px;
+  height: 25px;
+}
+
+.description__img img {
   width: 25px;
   height: 25px;
 }

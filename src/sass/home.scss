@@ -5,6 +5,7 @@
 @use 'barchart/navbar';
 @use 'barchart/reset'; 
 @use 'barchart/footer';
+@use 'barchart/menuham';
 /*---Lammar los barchart---*/
 @include reset.format; // Reseteamos toda la pagina
 
@@ -60,7 +61,7 @@
     
   }
 
-.results li a   {
+.results li p  {
     display: block ;
     width: 1160px;
     color: #777777;
@@ -69,11 +70,13 @@
 
 }
 
-.results li a:hover {
+.results li p:hover {
  background: #f3f3f3;
+ cursor: pointer;
 }
 .results li a i {
     margin-right: 5px;
+
 }
 
 .results li{
@@ -84,7 +87,7 @@
 .container{
     margin-top: 100px;
     display:grid;
-    grid-template-columns:300px 300px 300px ;
+    grid-template-columns:repeat(3,300px);
     column-gap: 5px;
     row-gap: 10px;
     justify-content: center;

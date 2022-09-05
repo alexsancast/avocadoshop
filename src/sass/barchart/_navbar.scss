@@ -129,8 +129,12 @@
      font-size: 18px;
      cursor: pointer;
      transition: all 300ms;
-     
-     
+      
+     &:hover {
+
+        background-color: rgb(69, 182, 98);;
+
+     }
 }
 
 

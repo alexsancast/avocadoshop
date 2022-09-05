@@ -115,6 +115,9 @@
   cursor: pointer;
   transition: all 300ms;
 }
+.header__btn_search:hover {
+  background-color: rgb(69, 182, 98);
+}
 
 /*----------Username Menu------*/
 .header__username_menu {
@@ -242,6 +245,66 @@
 }
 
 /*Variables*/
+.menu_ham {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -1700px;
+  top: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+
+.menu_ham .nav .nav__img_profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: auto;
+}
+.menu_ham .nav .nav__img_profile .img_profile {
+  width: 26px;
+  height: 26px;
+  padding-top: 10px;
+}
+
+.menu_ham .nav {
+  margin-top: 0;
+  margin-left: -12px;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  background: white;
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  transition: all 300ms;
+}
+.menu_ham .nav .nav__item_li img {
+  width: 20px;
+  height: 15px;
+}
+.menu_ham .nav li {
+  padding: 10px;
+}
+.menu_ham .nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+.menu_ham .nav a:hover {
+  color: var(--hospital-green);
+}
+.menu_ham .nav .nav__img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+}
+
+/*Variables*/
 /*Barcharts */
 /*---Lammar los barchart---*/
 body {
@@ -296,7 +359,7 @@ body {
   display: none;
 }
 
-.results li a {
+.results li p {
   display: block;
   width: 1160px;
   color: #777777;
@@ -304,8 +367,9 @@ body {
   text-decoration: none;
 }
 
-.results li a:hover {
+.results li p:hover {
   background: #f3f3f3;
+  cursor: pointer;
 }
 
 .results li a i {
@@ -320,7 +384,7 @@ body {
 .container {
   margin-top: 100px;
   display: grid;
-  grid-template-columns: 300px 300px 300px;
+  grid-template-columns: repeat(3, 300px);
   column-gap: 5px;
   row-gap: 10px;
   justify-content: center;
