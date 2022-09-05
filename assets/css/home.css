@@ -98,25 +98,30 @@
 }
 
 /*----------Boton para buscar------*/
-.header__btn_search {
+.search__btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35px;
   height: 35px;
-  line-height: 55px;
-  background-color: #65dd75;
-  color: white;
+  line-height: 80px;
+  color: #65dd75;
   position: absolute;
-  top: 15px;
-  right: 350px;
+  top: 18px;
+  right: 298x;
   border-radius: 50%;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   transition: all 300ms;
 }
-.header__btn_search:hover {
-  background-color: rgb(69, 182, 98);
+
+.header__search input {
+  width: 200px;
+  font-size: 14px;
+  height: 30px;
+  padding-left: 30px;
+  outline: none;
+  border-radius: 15px;
 }
 
 /*----------Username Menu------*/
@@ -125,7 +130,7 @@
   justify-content: space-around;
   width: 150px;
   margin-right: 20px;
-  transform: translateY(-10px);
+  transform: translateX(-70px);
 }
 
 .username_menu__profile {
@@ -315,69 +320,13 @@ body {
   list-style-type: none;
 }
 
-/*Buscador*/
-.search_menu {
-  position: fixed;
-  top: -70px;
-  width: 100%;
-  background: white;
-  padding: 20px;
-  z-index: 9;
-  transition: all 600ms;
-}
-
-.search_menu input {
-  display: block;
-  width: 1200px;
-  margin: auto;
-  padding: 5px;
-  font-size: 20px;
-  outline: 1 rgb(69, 182, 98);
-}
-
-.cover {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: none;
-  transition: all 1200ms;
-}
-
-/*---------------Resultado----------*/
-/*Resultados para la busqueda*/
-.results {
-  position: fixed;
-  top: 121px;
-  left: 50%;
-  transform: translateX(-48.4%);
-  width: 1200px;
-  margin: auto;
-  background: white;
-  z-index: 10;
-  display: none;
-}
-
-.results li p {
-  display: block;
-  width: 1160px;
-  color: #777777;
-  padding: 12px 20px;
-  text-decoration: none;
-}
-
-.results li p:hover {
-  background: #f3f3f3;
-  cursor: pointer;
-}
-
-.results li a i {
-  margin-right: 5px;
-}
-
-.results li {
-  list-style: none;
+.header__search input {
+  width: 200px;
+  font-size: 14px;
+  height: 30px;
+  padding-left: 30px;
+  outline: none;
+  border-radius: 15px;
 }
 
 /*Contenedor Principal**/
@@ -405,9 +354,9 @@ body {
   overflow: hidden;
 }
 .container__card:hover {
-  cursor: pointer;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(0.5%);
+  cursor: pointer;
 }
 
 .container__img_card {

@@ -16,8 +16,7 @@ const prueba = document.querySelector(".prueba");
 // let tableBody = document.createElement("tbody");//cuerpo de la tabla
 // const btn= document.getElementById('btn-cart');//BOTON OCULTAR CARRITO
 // const element = document.getElementById('element');//elemento para mostrar el carrito
-const inputFind = document.querySelector(".search_menu_input"); // Input para el buscador
-const results  = document.querySelector('.results'); //Resultados para la busqueda
+const inputFind = document.querySelector(".search__input"); // Input para el buscador
 // const barMenu = document.querySelector(".img-bar"); // Barra para mostrar el menu lateral
 // const asideMenu = document.querySelector(".about-menu-aside"); // menu leteral
 // const closeBar = document.querySelector(".img-close");
@@ -149,47 +148,25 @@ function viewProduct(e) {
 }
 
 // //Funcion para buscar los aguacates
-inputFind.addEventListener( 'keyup' , ()=>{
-        //Variables
-        results.innerHTML='';
-        results.style.display = "block";
-        const text = inputFind.value.toLowerCase(); //Lo llevamos a minusculas
-        const namesAvocados = newArrayAvocado(); // Tomamos el nuevo array
-
-        ///////
-        function newArrayAvocado (){
-            let newAvocados = []
-            search.forEach(element =>{
-                   newAvocados.push(element.name);
-                  
-            }  ); return newAvocados;
-        
-                
-        }
-       
-      
-         namesAvocados.forEach(name =>{ 
-            let aguacate = name.toLowerCase();
-            if (aguacate.indexOf(text) !== -1){
+inputFind.addEventListener( 'keyup' , () => {
+    //Variables
+    const text = inputFind.value.toLowerCase(); //Lo llevamos a minusculas
+    const namesAvocados = search.map(({name, id}) => ({name, id})); // Tomamos el nuevo array
+    let list = "";
     
-                results.innerHTML += `<li > <p class = "prueba"> <i  class="fa-solid fa-magnifying-glass " ></i>${name}</p> </li>` ;
-              
-            }
-            
-            if (inputFind.value ==''){
-                results.style.display = "none";
-        
-            }
+     namesAvocados.forEach(({name, id}) =>{
+        let aguacate = name.toLowerCase();
+        if (aguacate.indexOf(text) !== -1){
+            document.querySelector(`[data-id="${id}"]`).hidden = false;
+            list += `<li><a href=""> <i  class="fa-solid fa-magnifying-glass " ></i>${name}</a> </li>` 
+        } else {
+            document.querySelector(`[data-id="${id}"]`).hidden = true;
+        }
+    });
 
-           
-
-
-            
-         })    
-        
-
-})  
-
+     
+    
+});
 
 
 

@@ -113,31 +113,33 @@
 
 /*----------Boton para buscar------*/
 
-.header__btn_search { 
+.search__btn { 
     display: flex;
     justify-content: center;
      align-items: center;
      width: 35px;
      height: 35px;
-     line-height: 55px;
-     background-color: variable.$avocado-color;
-     color: white;
+     line-height: 80px;
+     color: variable.$avocado-color;
      position: absolute;
-     top: 15px;
-     right: 350px;
+     top: 18px;
+     right: 298x;
      border-radius: 50%;
-     font-size: 18px;
+     font-size: 20px;
      cursor: pointer;
      transition: all 300ms;
       
-     &:hover {
 
-        background-color: rgb(69, 182, 98);;
-
-     }
 }
 
-
+.header__search input{
+    width: 200px;
+    font-size: 14px;
+    height: 30px;
+    padding-left: 30px;
+    outline: none;
+    border-radius: 15px;
+}
 
 /*----------Username Menu------*/
 .header__username_menu{
@@ -145,7 +147,7 @@
     justify-content: space-around;
     width: 150px;
     margin-right: 20px;
-    transform: translateY(-10px);
+    transform: translateX(-70px);
 
    
        
