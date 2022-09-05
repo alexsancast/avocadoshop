@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/login-register.css">
+    <title>Welcome</title>
+</head>
+<body>
+
+    <div class="container">
+       <main >
+
+    
+        <div class="container__back_box">
+
+            <div class="back_box__login">
+                <h3>Do you already have an account ?</h3>
+                <p>Log in to enter the page</p>
+                <button id="back_box__btn">Start Login</button>
+            </div>
+
+
+            <div class="back_box__register">
+                <h3>You still don't have an account?</h3>
+                <p>Register so you can log in </p>
+                <button id="back_box_btn2">Start Register</button>
+            </div>
+
+        </div>
+
+
+      
+
+        <div class="container__login_register">
+            <form action="" class="form__login">
+                <h1>Login </h1>
+                
+                <div class="form__control">
+                    <input id="email" type="text" placeholder="Email">
+                    <small></small>
+                </div>
+                
+                <div class="form__control">
+
+                    <input id="password" type="password" placeholder="Password">
+                    <small></small>
+
+                </div>
+              
+                <button class="login__btn">Login</button>
+            </form>
+
+            <form action="" class="form__register">
+                <h2>Register</h2>
+                <input type="text" placeholder="Full Name">
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Confirm Password">
+                <button id="register__btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="/assets/js/transition.js"></script>
+    <script src="/assets/js/login-register.js" type="module"></script>
+
+</main>
+</body>
+
+</html>
