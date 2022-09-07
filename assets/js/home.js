@@ -10,8 +10,7 @@ let onclick = false;
 const priceFormat = new price();
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
-const prueba = document.querySelector(".prueba");
-// const amount = document.getElementById('amount');//cantidad de productos
+const amount = document.querySelector('.cart__amount');//cantidad de productos
 // let table = document.querySelector("table");//tabla de productos
 // let tableBody = document.createElement("tbody");//cuerpo de la tabla
 // const btn= document.getElementById('btn-cart');//BOTON OCULTAR CARRITO
@@ -97,35 +96,33 @@ document.addEventListener("DOMContentLoaded", (e)=> {
         //Eventos con los botones
         card.addEventListener('click', (e) => {viewProduct(e)});
         name.addEventListener('click', viewProduct);
-        // button.addEventListener('click', (e) => { addToCart(e, data);});
+        button.addEventListener('click', (e) => { addToCart(e, data);});
           })
 }
 
 //Agregar al carrito
-// function addToCart(e, data) {
-//     const id = e.target.dataset.id; //Obtenemos el id del aguacate
-//     const product = data.data.find(product => product.id === id);//Obtenemos el aguacate
-//     const existing = cart.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
-    
+
+function addToCart(e, data) {
+    const id = e.target.dataset.id; //Obtenemos el id del aguacate
+    const product = data.data.find(product => product.id === id);//Obtenemos el aguacate
+    const existing = cart.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
+    if(existing){
+
+       cart.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
+       
+    }
+    else {
+        cart.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+     
+    }
+
+    amount.innerHTML = cart.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;    
 
 
 
-//     if(existing){
-
-//        cart.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
-//     }
-//     else {
-//         cart.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
-//         amount.innerText = cart.length;
-//     }
+}
 
 
-
-//     printCarShop(cart);//Pintamos el carrito
-
-
-
-// }
 
 // //FUNCION PARA VER EL DETALLE DEL PRODUCTO
 function viewProduct(e) {
