@@ -1,13 +1,9 @@
 import {price} from "./validInput_price.js" ;
 //LLAMADA A LA API PARA OBTENER LOS DATOS
 const API = 'https://platzi-avo.vercel.app';
-//variables
-const search = [];
-let cart = [];
-let onclick = false;
-
 //Instanciamos la clave para el formato de moneda
 const priceFormat = new price();
+const cart = []
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
@@ -19,41 +15,22 @@ const inputFind = document.querySelector(".search__input"); // Input para el bus
 // const barMenu = document.querySelector(".img-bar"); // Barra para mostrar el menu lateral
 // const asideMenu = document.querySelector(".about-menu-aside"); // menu leteral
 // const closeBar = document.querySelector(".img-close");
-document.addEventListener("DOMContentLoaded", (e)=> {
-    element.style.visibility = "hidden";
-
-});//DOMContentLoaded
-
-// btn.addEventListener('click',()=>{
-
-// if(!onclick) {
-//     element.style.visibility = "visible";
-//     onclick = true;
-// }else if (onclick) {
-//     element.style.visibility = "hidden";
-//     onclick = false;
-// }
-
-// });//PONE VISIBLE EL DETALLE DEL CARRITO
 
 
+//Llamar a la api para obetener los datos & cargar la pagina
+    window.addEventListener('DOMContentLoaded',async function() {
+        const apiAvocado = await fetch (`${API}/api/avo`);
+        const data = await apiAvocado.json();
+        // const item = localStorage.setItem('cart', JSON.stringify(data));
+        // const item2 = JSON.parse(this.localStorage.getItem("cart"))
+        fillCart(data);
 
-//Llamar a la api para obetener los datos
- async function loadData () {
-    const apiAvocado = await fetch (`${API}/api/avo`);
-     const data = await apiAvocado.json();
-     fillCart(data);
-
- }
+    }) ;     
     
-
-
-
 // Funcion para llenar las carts
  function fillCart (data) {            
     // const value = document.querySelector('.value');
         data.data.forEach(element => {
-        search.push(element);
         //Creamos las cartas que estaran dentro del container
         const card = document.createElement("div");
         card.classList.add("container__card");
@@ -103,26 +80,48 @@ document.addEventListener("DOMContentLoaded", (e)=> {
 //Agregar al carrito
 
 function addToCart(e, data) {
-    const id = e.target.dataset.id; //Obtenemos el id del aguacate
-    const product = data.data.find(product => product.id === id);//Obtenemos el aguacate
-    const existing = cart.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
-    if(existing){
+    let id = e.target.dataset.id; //Obtenemos el id del aguacate
+    let product = data.data.find(product => product.id === id);//Obtenemos el aguacate
+    if (localStorage.getItem('cart') !== null){
 
-       cart.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
-       
-    }
-    else {
-        cart.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
-     
-    }
+         let test = JSON.parse (localStorage.getItem("cart"));
+         const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
+             if(existing){
 
-    amount.innerHTML = cart.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;    
+                  test.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
+                  localStorage.setItem('cart' , JSON.stringify(test));
+                 }
+              else {
+          test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+          localStorage.setItem('cart' , JSON.stringify(test));
+        
+      
+         } 
+
+
+    } else {
+           localStorage.setItem('cart', JSON.stringify(cart));
+           let test = JSON.parse (localStorage.getItem("cart"));
+           const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
+               if(!existing){
+                test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+                localStorage.setItem('cart' , JSON.stringify(test));
+                   }
+}
+
+    
+
+
+
+
+    amount.innerHTML = cart.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
+    localStorage.setItem('amount', JSON.stringify(amount));   
+   
+   
 
 
 
 }
-
-
 
 // //FUNCION PARA VER EL DETALLE DEL PRODUCTO
 function viewProduct(e) {
@@ -166,84 +165,13 @@ inputFind.addEventListener( 'keyup' , () => {
 });
 
 
+//Cargar pagina con los item 
+//     window.addEventListener('DOMContentLoaded', (event) => {
+//     amount.innerHTML = itemString.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;     
+    
+// });
 
 
-
-// //FUNCION PARA IMPRIMIR EL CARRITO
-// const printCarShop = (data) => {
-
-//     tableBody.innerHTML = "";
-
-//     data.forEach((item) => {
-//         let fila = document.createElement("tr");
-//         let image = document.createElement('img')
-//         let td = document.createElement("td");
-
-
-//         td.innerHTML = item.name;
-//         fila.appendChild(td);
-
-//         td = document.createElement("td");
-//         // image.src = item.image;
-//         image.src = `${API}${item.image}`;
-//         fila.appendChild(td);
-//         fila.appendChild(image);
-
-//         td = document.createElement("td");
-//         td.innerHTML = item.quantity;
-//         fila.appendChild(td);
-
-
-//         td = document.createElement("td");
-//         td.innerHTML =Math.round(item.price * item.quantity);
-//         fila.appendChild(td);
-
-//         tableBody.appendChild(fila);
-
-
-//     });
-
-//     table.appendChild(tableBody);
-
-// }
-
-
-// //Mostrar menu lateral
-// barMenu.addEventListener("click" , ()=> {
-
-//     if (asideMenu.style.left === "-1700px"){
-
-//         asideMenu.style.left = "0px" ;
-
-//     }
-//      else {
-//         asideMenu.style.left = "-1700px";
-
-//      }
-
-// })
-
-// //Cerrar menu laterar 
-
-// closeBar.addEventListener('click' , ()=>{
-//     if (asideMenu.style.left === "0px"){
-        
-//         asideMenu.style.left = "-1700px" ;
-
-//     }
-// })
-
-// //Menu laterarl 
-
-// asideMenu.addEventListener("click" , ()=>{
-//     if (asideMenu.style.left === "0px"){
-        
-//         asideMenu.style.left = "-1700px" ;
-
-//     }
-// })
-
-loadData ();
 
 
 

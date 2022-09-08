@@ -1,7 +1,11 @@
-import {price} from "./validInput_price.js" ;
+        import {price} from "./validInput_price.js" ;
     
          const API = 'https://platzi-avo.vercel.app';
-         const stringItem =  localStorage.getItem('item')
+         const stringItem =  localStorage.getItem('item');
+         const stringCart = localStorage.getItem('cart');
+         const amount = document.querySelector(".cart__amount");
+         ///---------------------------------------------
+         const itemData  = JSON.parse(stringCart);
          const itemObject = JSON.parse(stringItem);
          //Formato de precio
           const priceFormat = new price();
@@ -9,7 +13,7 @@ import {price} from "./validInput_price.js" ;
           const container = document.querySelector(".container");
           const containerAttributes = document.querySelector(".container__attributes");
           //Seleccionar el contenedor de los atributos
-    const loadDataDetails =() => {
+      const loadDataDetails =() => {
       
           //Crear una carta 
           const card = document.createElement ("div");
@@ -55,7 +59,7 @@ import {price} from "./validInput_price.js" ;
           input.classList.add("container__input");
           input.setAttribute("type","number" );
           
-          
+          //cargar la cantidad de carrito 
 
          
           //Anadimos los atributos
@@ -83,23 +87,21 @@ import {price} from "./validInput_price.js" ;
          containerAttributes.append( pShape , pHardiness ,pTaste);
          card.appendChild(containerAttributes);
          containerChild.append(input,button);
-         
        
-         
-         
-         
-
-         
-
       
     };
+
+
 
     loadDataDetails();
    
         
    
             
-
+    window.addEventListener('DOMContentLoaded', (event) => {
+      amount.innerHTML = itemData.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;     
+      
+  });
 
              
           
