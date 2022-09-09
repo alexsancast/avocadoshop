@@ -2,10 +2,8 @@
     
          const API = 'https://platzi-avo.vercel.app';
          const stringItem =  localStorage.getItem('item');
-         const stringCart = localStorage.getItem('cart');
          const amount = document.querySelector(".cart__amount");
          ///---------------------------------------------
-         const itemData  = JSON.parse(stringCart);
          const itemObject = JSON.parse(stringItem);
          //Formato de precio
           const priceFormat = new price();
@@ -13,51 +11,54 @@
           const container = document.querySelector(".container");
           const containerAttributes = document.querySelector(".container__attributes");
           //Seleccionar el contenedor de los atributos
-      const loadDataDetails =() => {
-      
-          //Crear una carta 
-          const card = document.createElement ("div");
-          card.classList.add("container__card");
+        window.addEventListener('DOMContentLoaded', (event) => {
+          
+         //Crear una carta 
+             const card = document.createElement ("div");
+             card.classList.add("container__card");
 
           //Crear div para la cantidad y el boton
-          const containerChild = document.createElement("div");
-          containerChild.classList.add("container__add_amount");
+            const containerChild = document.createElement("div");
+            containerChild.classList.add("container__add_amount");
 
 
           //Ananimos la imagen de aguacate en la carta
-          const img = document.createElement("img");
-          img.classList.add("container__img");
-          img.src = `${API}${itemObject.image}`;
+             const img = document.createElement("img");
+             img.classList.add("container__img");
+             img.src = `${API}${itemObject.image}`;
 
           //Anadimos el nombre del aguacate 
-          const name = document.createElement("h1");
-          name.classList.add("container__name");
-          name.textContent = `${itemObject.name}`
+             const name = document.createElement("h1");
+             name.classList.add("container__name");
+             name.textContent = `${itemObject.name}`
 
           //Anadimos la descripcion
-           const description = document.createElement ("p");
-           description.classList.add("container__desc");
-           description.textContent= `${itemObject.attributes.description}`;
+              const description = document.createElement ("p");
+              description.classList.add("container__desc");
+              description.textContent= `${itemObject.attributes.description}`;
 
           //Anadimos el precio 
-          const price = document.createElement ("p");
-          price.classList.add("container__price");
-          price.textContent = priceFormat.formatPrice( itemObject.price) ;
+            const price = document.createElement ("p");
+             price.classList.add("container__price");
+             price.textContent = priceFormat.formatPrice( itemObject.price) ;
 
           //Anadimos el boton
     
-          const add = document.createElement('p');
-          const button  = document.createElement("button");
-          add.classList.add("btn__add");
-          add.textContent ="Add to cart"
-          button.classList.add("container__btn");
-          button.classList.add("container__btn_loading");
+             const add = document.createElement('p');
+             const button  = document.createElement("button");
+             add.classList.add("btn__add");
+             add.textContent ="Add to cart"
+             button.classList.add("container__btn");
+        //   button.classList.add("container__btn_loading");
          
           
           //Anadimos input para la cantidad 
-          const input = document.createElement("input");
-          input.classList.add("container__input");
-          input.setAttribute("type","number" );
+             const input = document.createElement("input");
+             input.classList.add("container__input");
+             input.setAttribute("type","number" );
+             input.setAttribute("min","0" );
+             input.setAttribute("max","100" );
+             input.setAttribute("value","1" );
           
           //cargar la cantidad de carrito 
 
@@ -79,29 +80,70 @@
            pTaste.classList.add("ptaste");
            pTaste.textContent =`${itemObject.attributes.taste}`;
 
-          //Insertamos los elementos
-         button.appendChild(add);
-         container.appendChild(card);
-         card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
-         card.appendChild(containerChild);
-         containerAttributes.append( pShape , pHardiness ,pTaste);
-         card.appendChild(containerAttributes);
-         containerChild.append(input,button);
-       
+
       
-    };
+          //Insertamos los elementos
+             button.appendChild(add);
+             container.appendChild(card);
+             card.append(img ,name ,description,price ); //**Insertar imagen/desc/name/precio a la carta */
+             card.appendChild(containerChild);
+             containerAttributes.append( pShape , pHardiness ,pTaste);
+             card.appendChild(containerAttributes);
+             containerChild.append(input,button);
+       
 
+         //Funciones
+              button.addEventListener("click", addToCart);
 
+         //Carrito Amount 
+         let p = JSON.parse( localStorage.getItem("cart"));
+         amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;    
+      });
 
-    loadDataDetails();
+    
+    //Anadir al carrito 
+  
+     function addToCart(){
+        let product = itemObject ;
+        if (localStorage.getItem('cart') !== null){
+             let test = JSON.parse (localStorage.getItem("cart"));
+             const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
+                 if(existing){
+                      test.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
+                      localStorage.setItem('cart' , JSON.stringify(test));
+                      
+                     }else {
+                        test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+                        localStorage.setItem('cart' , JSON.stringify(test));
+                       } 
+                  } else {
+                         localStorage.setItem('cart', JSON.stringify(cart));
+                         let test = JSON.parse (localStorage.getItem("cart"));
+                         const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
+                             if(!existing){
+                              test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+                              localStorage.setItem('cart' , JSON.stringify(test));
+                                 }
+
+                            
+              }             
+                        
+              let p = JSON.parse( localStorage.getItem("cart"));
+              amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
+                 
+
+    
+     }
+    
+
    
+
         
    
             
-    window.addEventListener('DOMContentLoaded', (event) => {
-      amount.innerHTML = itemData.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;     
+       
       
-  });
+  
 
              
           
