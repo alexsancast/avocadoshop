@@ -59,6 +59,7 @@
              input.setAttribute("min","0" );
              input.setAttribute("max","100" );
              input.setAttribute("value","1" );
+
           
           //cargar la cantidad de carrito 
 
@@ -93,7 +94,7 @@
        
 
          //Funciones
-              button.addEventListener("click", addToCart);
+              button.addEventListener('click', (e) => { addToCart(input)});
 
          //Carrito Amount 
          let p = JSON.parse( localStorage.getItem("cart"));
@@ -103,17 +104,19 @@
     
     //Anadir al carrito 
   
-     function addToCart(){
+     function addToCart(input){
+        let inputAmount = input.value;
+        
         let product = itemObject ;
         if (localStorage.getItem('cart') !== null){
              let test = JSON.parse (localStorage.getItem("cart"));
              const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
                  if(existing){
-                      test.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
+                      test.find(p => p.id === product.id).quantity += inputAmount;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
                       localStorage.setItem('cart' , JSON.stringify(test));
                       
                      }else {
-                        test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+                        test.push({...product, quantity: inputAmount});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
                         localStorage.setItem('cart' , JSON.stringify(test));
                        } 
                   } else {
@@ -121,7 +124,7 @@
                          let test = JSON.parse (localStorage.getItem("cart"));
                          const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
                              if(!existing){
-                              test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
+                              test.push({...product, quantity: inputAmount});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
                               localStorage.setItem('cart' , JSON.stringify(test));
                                  }
 

@@ -155,8 +155,15 @@ inputFind.addEventListener( 'keyup' , () => {
 
 //Cargar pagina con los item 
     window.addEventListener('DOMContentLoaded', (event) => {
-        let a = JSON.parse( localStorage.getItem("cart"));
-        amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;    
+
+        if (localStorage.getItem('cart') !== null){
+
+            let a = JSON.parse( localStorage.getItem("cart"));
+            amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
+
+
+        } else {localStorage.setItem('cart', JSON.stringify(cart))}
+     
     
 });
 
