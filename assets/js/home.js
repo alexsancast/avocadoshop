@@ -4,6 +4,7 @@ const API = 'https://platzi-avo.vercel.app';
 //Instanciamos la clave para el formato de moneda
 const priceFormat = new price();
 const cart = []
+const search = [];
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
@@ -31,6 +32,7 @@ const inputFind = document.querySelector(".search__input"); // Input para el bus
  function fillCart (data) {            
     // const value = document.querySelector('.value');
         data.data.forEach(element => {
+        search.push(element)
         //Creamos las cartas que estaran dentro del container
         const card = document.createElement("div");
         card.classList.add("container__card");
