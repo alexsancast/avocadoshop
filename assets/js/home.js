@@ -83,22 +83,17 @@ function addToCart(e, data) {
     let id = e.target.dataset.id; //Obtenemos el id del aguacate
     let product = data.data.find(product => product.id === id);//Obtenemos el aguacate
     if (localStorage.getItem('cart') !== null){
-
          let test = JSON.parse (localStorage.getItem("cart"));
          const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
              if(existing){
-
                   test.find(p => p.id === product.id).quantity++;//Si el aguacate ya esta en el carrito, aumentamos la cantidad
                   localStorage.setItem('cart' , JSON.stringify(test));
+                  
                  }
               else {
           test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
           localStorage.setItem('cart' , JSON.stringify(test));
-        
-      
          } 
-
-
     } else {
            localStorage.setItem('cart', JSON.stringify(cart));
            let test = JSON.parse (localStorage.getItem("cart"));
@@ -107,20 +102,11 @@ function addToCart(e, data) {
                 test.push({...product, quantity: 1});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1
                 localStorage.setItem('cart' , JSON.stringify(test));
                    }
-}
-
-    
-
-
-
-
-    amount.innerHTML = cart.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
-    localStorage.setItem('amount', JSON.stringify(amount));   
-   
-   
-
-
-
+                   
+}             
+           let p = JSON.parse( localStorage.getItem("cart"));
+          amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
+               
 }
 
 // //FUNCION PARA VER EL DETALLE DEL PRODUCTO
@@ -166,10 +152,11 @@ inputFind.addEventListener( 'keyup' , () => {
 
 
 //Cargar pagina con los item 
-//     window.addEventListener('DOMContentLoaded', (event) => {
-//     amount.innerHTML = itemString.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;     
+    window.addEventListener('DOMContentLoaded', (event) => {
+        let a = JSON.parse( localStorage.getItem("cart"));
+        amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;    
     
-// });
+});
 
 
 
