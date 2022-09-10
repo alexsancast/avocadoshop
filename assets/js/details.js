@@ -105,7 +105,7 @@
     //Anadir al carrito 
   
      function addToCart(input){
-        let inputAmount = input.value;
+        let inputAmount = Number(input.value) ;
         
         let product = itemObject ;
         if (localStorage.getItem('cart') !== null){
