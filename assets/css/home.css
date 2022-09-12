@@ -320,15 +320,6 @@ body {
   list-style-type: none;
 }
 
-.header__search input {
-  width: 200px;
-  font-size: 14px;
-  height: 30px;
-  padding-left: 30px;
-  outline: none;
-  border-radius: 15px;
-}
-
 /*Contenedor Principal**/
 .container {
   margin-top: 100px;
@@ -396,6 +387,66 @@ body {
 .container__btn_card:hover {
   cursor: pointer;
   background-color: rgb(69, 182, 98);
+}
+
+.preview {
+  max-width: 1200px;
+  min-width: 300px;
+  right: 0;
+  top: 70px;
+  position: absolute;
+  background-color: white;
+  visibility: hidden;
+}
+
+.preview__card_shop {
+  display: grid;
+  grid-template-columns: 200px 20px;
+  grid-template-rows: 45px 30px;
+  column-gap: -40px;
+  position: relative;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+}
+
+.preview__name {
+  display: flex;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.card_shop__img {
+  width: 75px;
+  height: 75px;
+}
+
+.card_shop__name {
+  font-size: 13px;
+}
+
+.card_shop__price {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  position: absolute;
+  top: -20px;
+  left: 70px;
+}
+
+.card_shop__qua {
+  grid-area: quality;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.card_shop_trash {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.card_shop__trash {
+  width: 20px;
+  height: 20px;
 }
 
 /*# sourceMappingURL=home.css.map */
