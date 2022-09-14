@@ -8,14 +8,8 @@ const search = [];
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
-// let table = document.querySelector("table");//tabla de productos
-// let tableBody = document.createElement("tbody");//cuerpo de la tabla
-// const btn= document.getElementById('btn-cart');//BOTON OCULTAR CARRITO
-// const element = document.getElementById('element');//elemento para mostrar el carrito
 const inputFind = document.querySelector(".search__input"); // Input para el buscador
-// const barMenu = document.querySelector(".img-bar"); // Barra para mostrar el menu lateral
-// const asideMenu = document.querySelector(".about-menu-aside"); // menu leteral
-// const closeBar = document.querySelector(".img-close");
+const preview = document.querySelector(".preview");
 
 
 //Llamar a la api para obetener los datos & cargar la pagina
@@ -64,6 +58,7 @@ const inputFind = document.querySelector(".search__input"); // Input para el bus
         //Anadimos el boton del aguacate
         const button = document.createElement("button");
         button.classList.add("container__btn_card");
+        button.setAttribute('id','reload');
         button.textContent = "Add";
         button.dataset.id = element.id;
 
@@ -108,8 +103,10 @@ function addToCart(e, data) {
 }             
            let p = JSON.parse( localStorage.getItem("cart"));
           amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
-
           loadCart();
+         
+       
+        
                
 }
 
@@ -162,23 +159,26 @@ inputFind.addEventListener( 'keyup' , () => {
             amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
         } else {localStorage.setItem('cart', JSON.stringify(cart))}
 
-      
         loadCart();
+             
+      
+        
     
 });
 
 //Cargar los item en la preview cart 
 const loadCart = ()=>{
+    preview.innerHTML = "";
     let item = JSON.parse(localStorage.getItem("cart")) ;
-    item.forEach (element =>{ 
-
+    item.forEach (element =>{
+       
+     
         //crear contenedor para las cards
         let card = document.createElement("div");
         card.classList.add("preview__card_shop");
         //Contenedor para las imagen y nombre
         let imgName = document.createElement("div");
         imgName.classList.add ("preview__name");
-
         //Contenedor para la cantidad e imagen trash
         let quaImg = document.createElement("div");
         quaImg.classList.add("card_shop_trash");
@@ -208,16 +208,35 @@ const loadCart = ()=>{
         trash.classList.add("card_shop__trash");
         trash.src = "/assets/img/trash-bin.png";
 
+   
+
+
         //Agregar los nodos al html
+        
         quaImg.append(qua,trash);
         imgName.append(img,name);
         card.append(imgName,quaImg,price);
         preview.append(card);
     })
+
+        //Contenedor para el subtotal 
+        // let sub = document.createElement("div");
+        // sub.classList.add("preview__card_sub");
+        // //
+        // const subtotal = documentcreateElement ("h2");
+        // subtotal.classList.add("card_shop__subtotal");
+        // subtotal.innerHTML = "Subtotal "
+        
+
+
 }
 
 
+// $('#reload').click(function(){
+//     $('#feedback-bg-info').load(" #feedback-bg-info");//actualizas el div automaticamente
 
+// })
+   
 
 
 
