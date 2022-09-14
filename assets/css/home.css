@@ -157,6 +157,10 @@
   padding: 0px;
   transform: translateY(32px);
 }
+.username_menu__cart .cart__img:hover {
+  cursor: pointer;
+  transform: translateY(30px);
+}
 .username_menu__cart .cart__amount {
   display: flex;
   align-items: center;
@@ -169,6 +173,105 @@
   top: 25px;
   right: 6px;
   z-index: 2;
+}
+
+.preview {
+  min-width: 350px;
+  right: 25px;
+  top: 85px;
+  position: absolute;
+  visibility: hidden;
+  background-color: white;
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  transition: visibility 0s, opacity 0.6s linear;
+}
+
+.preview__card_shop {
+  display: grid;
+  grid-template-columns: 200px 20px;
+  grid-template-rows: 45px 30px;
+  column-gap: -40px;
+  position: relative;
+  background-color: white;
+}
+
+.preview__name {
+  display: flex;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.card_shop__img {
+  width: 75px;
+  height: 75px;
+}
+
+.card_shop__name {
+  font-size: 13px;
+}
+
+.card_shop__price {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  position: absolute;
+  top: -20px;
+  left: 70px;
+}
+
+.card_shop__qua {
+  grid-area: quality;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.card_shop_trash {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  position: absolute;
+  left: 230px;
+}
+
+.card_shop__trash {
+  width: 20px;
+  height: 20px;
+}
+.card_shop__trash:hover {
+  cursor: pointer;
+}
+
+.preview__container_sub {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+.preview__container_sub .card_sub__btn {
+  background-color: #65dd75;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 15px;
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+.preview__container_sub .card_sub__btn:hover {
+  cursor: pointer;
+  background-color: rgb(69, 182, 98);
+}
+
+.preview__card_sub {
+  position: absolute;
+  bottom: -10px;
+  left: 25px;
+}
+.preview__card_sub .card_sub__subtotal {
+  margin-bottom: -10px;
+  font-size: 17px;
 }
 
 /*---------Footer------------------*/
@@ -387,67 +490,6 @@ body {
 .container__btn_card:hover {
   cursor: pointer;
   background-color: rgb(69, 182, 98);
-}
-
-.preview {
-  max-width: 1200px;
-  min-width: 300px;
-  right: 0;
-  top: 70px;
-  position: absolute;
-  background-color: white;
-  visibility: hidden;
-  transition: all cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-.preview__card_shop {
-  display: grid;
-  grid-template-columns: 200px 20px;
-  grid-template-rows: 45px 30px;
-  column-gap: -40px;
-  position: relative;
-  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
-}
-
-.preview__name {
-  display: flex;
-  align-items: center;
-  grid-column: 1/2;
-  grid-row: 1/2;
-}
-
-.card_shop__img {
-  width: 75px;
-  height: 75px;
-}
-
-.card_shop__name {
-  font-size: 13px;
-}
-
-.card_shop__price {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  position: absolute;
-  top: -20px;
-  left: 70px;
-}
-
-.card_shop__qua {
-  grid-area: quality;
-  grid-column: 3/4;
-  grid-row: 1/2;
-}
-
-.card_shop_trash {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.card_shop__trash {
-  width: 20px;
-  height: 20px;
 }
 
 /*# sourceMappingURL=home.css.map */
