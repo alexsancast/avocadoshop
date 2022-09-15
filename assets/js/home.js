@@ -209,10 +209,10 @@ const loadCart = ()=>{
      trash.classList.add("card_shop__trash");
      trash.src = "/assets/img/trash-bin.png";
    //Agregar los nodos al html
-   quaImg.append(qua,trash);
-   imgName.append(img,name);
-   card.append(imgName,quaImg,price);
-   preview.append(card);
+     quaImg.append(qua,trash);
+     imgName.append(img,name);
+     card.append(imgName,quaImg,price);
+     preview.append(card);
 })
    //contanedor princiapl 
    let containerSub =  document.createElement("div");
@@ -224,25 +224,29 @@ const loadCart = ()=>{
    //Valor para el total 
    let val = document.createElement("p");
    val.classList.add("card_sub__value");
+   val.innerHTML =  priceFormat.formatPrice(item.map(element => element.price * element.quantity).reduce((cont ,val)=> cont + val))
    
    //Label Subtotal
    const subtotal = document.createElement ("h2");
    subtotal.classList.add("card_sub__subtotal");
    subtotal.innerHTML = "Subtotal ";
 
-   //Boton Checkout 
+   //Boton preview 
    const checkout = document.createElement("button");
    checkout.classList.add("card_sub__btn");
    checkout.innerHTML = "Preview Cart"
 
-    //Sumar el valor de los item
-   const newTotal = item.map(element => element.price * element.quantity).reduce((cont ,val)=> cont + val);
+
+   
 
    //Anadir al html
-   val.innerHTML = priceFormat.formatPrice(newTotal) ;
    sub.append(subtotal,val);
    containerSub.append(sub,checkout);
    preview.append(containerSub);
+
+   checkout.addEventListener("click", ()=>{
+    window.location.href = '/public/checkout.html';
+   })
 
 
    

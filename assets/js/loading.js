@@ -15,6 +15,7 @@ cartImg.addEventListener("click" ,()=>{
 
     if (preview.style.visibility == "hidden") {
         preview.style.visibility = "visible";
+        preview.style.opacity = "1";
         
 
     }else { preview.style.visibility ="hidden"}
