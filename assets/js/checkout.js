@@ -1,18 +1,13 @@
 
 import {price} from "./validInput_price.js" ;
 const API = 'https://platzi-avo.vercel.app';
-
 //Capturamos los datos del carrito
-
-//
 const priceFormat = new price();
 const itemCheckout = document.querySelector(".container__items_checkout");
-const item = JSON.parse(localStorage.getItem("cart")) ;
-
+const item = JSON.parse(localStorage.getItem('cart')) ;
 
 const contItems = document.querySelector(".container__items");
 const contCheckout = document.querySelector(".container__checkout");
-
 //Pintar los datos en la pagina 
 window.addEventListener('DOMContentLoaded' , (event)=>{
     item.forEach  (element =>{
@@ -56,7 +51,6 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
         card.append(img ,name,price,quan,quanPrice,close);
         contItems.append(card);
            })
-
         //contenedor subotal y precio
         let contSub = document.createElement("div");
         contSub.classList.add("container__subprice");
@@ -98,9 +92,10 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
 
   function removeItem (e){
      const id = e.target.dataset.id;
-     const objItem = item.findIndex(obj=> obj.id == id);
-     const newItem = item.splice (objItem,1);
-     console.log(newItem);
+     const objItem = item.findIndex(obj=> obj.id === id);
+     item.splice(objItem,1);
+     localStorage.setItem('cart', JSON.stringify(item));
+     
       
   }
 

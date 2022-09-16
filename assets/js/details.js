@@ -148,7 +148,6 @@
          else {
                localStorage.setItem('cart', JSON.stringify(cart));
                let test = JSON.parse (localStorage.getItem('cart'));
-               console.log(test);
                const existing = test.some(p => p.id === product.id);//Verificamos si el aguacate ya esta en el carrito
                 if(!existing){
                         test.push({...product, quantity: inputAmount});//Si el aguacate no esta en el carrito, lo agregamos al carrito con una cantidad de 1

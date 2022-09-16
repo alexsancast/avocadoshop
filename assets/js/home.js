@@ -166,13 +166,11 @@ inputFind.addEventListener( 'keyup' , () => {
 
 
 //Cargar pagina con los item 
-    window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', (event) => {
         if (localStorage.getItem('cart') !== null){
             let a = JSON.parse( localStorage.getItem("cart"));
-            console.log(a);
             amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
         } 
-
       newCart.loadCart();
          
              
