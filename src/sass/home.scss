@@ -97,6 +97,14 @@
     width: 80px;
     height: 30px;
     transition: all 300ms;
+    position: relative;
+
+    p {
+
+        margin: auto;
+    }
+    
+
 
     &:hover{
         cursor: pointer;
@@ -106,5 +114,36 @@
     
 }
 
+.container__btn_loading .btn__add {
+    visibility: hidden;
+    opacity: 0;
+}
 
+.container__btn_loading::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border:4px solid transparent;
+    border-top-color: #ffff ;
+    border-radius: 50%;
+    animation:button-loading-spinner 1s linear  infinite ;
+
+
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to{
+        transform: rotate(1turn);
+    }
+}
 

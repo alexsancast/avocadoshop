@@ -364,13 +364,16 @@ body {
 }
 
 .container__img {
-  margin-left: 280px;
+  margin-left: 240px;
+  align-items: center;
+  gap: 20px;
   margin-top: 80px;
   display: flex;
+  margin-bottom: 20px;
 }
 .container__img img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .container {
@@ -381,7 +384,7 @@ body {
 .container__items_checkout {
   display: flex;
   justify-content: center;
-  gap: 80px;
+  gap: 20px;
 }
 .container__items_checkout .container__checkout {
   width: 300px;
@@ -395,6 +398,9 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.container__items_checkout .container__checkout .container__subprice .checkout__price {
+  font-size: 20px;
+}
 .container__items_checkout .container__checkout .container__inputbtn {
   align-items: center;
   display: flex;
@@ -404,6 +410,8 @@ body {
 .container__items_checkout .container__checkout .container__inputbtn .checkout__input {
   width: 200px;
   height: 120px;
+  border: none;
+  outline: none;
 }
 .container__items_checkout .container__checkout .container__inputbtn .checkout__btn {
   background-color: #65dd75;
@@ -411,7 +419,7 @@ body {
   border-radius: 25px;
   color: #fff;
   font-family: inherit;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 100px;
   width: 180px;
   height: 55px;
@@ -436,21 +444,39 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   height: 90px;
-  width: 650px;
+  width: 600px;
   justify-content: space-around;
+  position: relative;
 }
 .items__cart .items__img {
   width: 80px;
   height: 80px;
-  margin-left: -40px;
+  position: absolute;
+  left: 0px;
 }
 .items__cart .items__name {
   font-size: 15px;
   margin-left: -80px;
+  position: absolute;
+  left: 160px;
+}
+.items__cart .items__price {
+  position: absolute;
+  left: 260px;
+}
+.items__cart .items__quan {
+  position: absolute;
+  left: 360px;
+}
+.items__cart .items__quanprice {
+  position: absolute;
+  left: 450px;
 }
 .items__cart .items__close {
   width: 9px;
   height: 9px;
+  position: absolute;
+  left: 550px;
 }
 .items__cart .items__close:hover {
   cursor: pointer;

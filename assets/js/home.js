@@ -1,15 +1,16 @@
 import {price} from "./validInput_price.js" ;
+import { previewCart } from "./fillcart.js";
 //LLAMADA A LA API PARA OBTENER LOS DATOS
 const API = 'https://platzi-avo.vercel.app';
 //Instanciamos la clave para el formato de moneda
 const priceFormat = new price();
+const newCart = new previewCart();
 const cart = []
 const search = [];
 //variables para el html
 const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
 const inputFind = document.querySelector(".search__input"); // Input para el buscador
-const preview = document.querySelector(".preview");
 
 
 //Llamar a la api para obetener los datos & cargar la pagina
@@ -51,25 +52,34 @@ const preview = document.querySelector(".preview");
 
 
         //Anadimos el precio del aguacate
+
         const price = document.createElement("p");
         price.classList.add("container__pricec_card");
         price.textContent = priceFormat.formatPrice(element.price);
 
         //Anadimos el boton del aguacate
         const button = document.createElement("button");
+        button.innerHTML= "Add"
         button.classList.add("container__btn_card");
         button.setAttribute('id','reload');
-        button.textContent = "Add";
         button.dataset.id = element.id;
 
         //Lo inyectamos en el doc html
-        container.appendChild(card);
         card.append(img, name, description, price, button);
-
+        container.appendChild(card);
         //Eventos con los botones
         card.addEventListener('click', (e) => {viewProduct(e)});
         name.addEventListener('click', viewProduct);
         button.addEventListener('click', (e) => { addToCart(e, data);});
+        //Boton loeader
+        button.addEventListener("click" ,()=> {
+            button.classList.add("container__btn_loading")
+            button.innerHTML = ""
+            setTimeout(()=>{
+               button.classList.remove("container__btn_loading");button.innerHTML = ""
+               button.innerHTML = "Add";
+            },1000)})
+       
           })
 }
 
@@ -102,8 +112,11 @@ function addToCart(e, data) {
                    
 }             
            let p = JSON.parse( localStorage.getItem("cart"));
-          amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
-         loadCart();
+           setTimeout(()=>{
+            amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
+            newCart.loadCart();
+         },1000)
+        
          
        
         
@@ -156,10 +169,11 @@ inputFind.addEventListener( 'keyup' , () => {
     window.addEventListener('DOMContentLoaded', (event) => {
         if (localStorage.getItem('cart') !== null){
             let a = JSON.parse( localStorage.getItem("cart"));
+            console.log(a);
             amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
-        } else {localStorage.setItem('cart', JSON.stringify(cart))}
+        } 
 
-      loadCart();
+      newCart.loadCart();
          
              
       
@@ -167,92 +181,7 @@ inputFind.addEventListener( 'keyup' , () => {
     
 });
 
-
-
-//Cargar los item en la preview cart 
-const loadCart = ()=>{
-    preview.innerHTML = "";
-    let item = JSON.parse(localStorage.getItem("cart")) ;
-    item.forEach (element =>{
-   //crear contenedor para las cards
-     let card = document.createElement("div");
-     card.classList.add("preview__card_shop");
-   //Contenedor para las imagen y nombre
-     let imgName = document.createElement("div");
-     imgName.classList.add ("preview__name");
-   //Contenedor para la cantidad e imagen trash
-     let quaImg = document.createElement("div");
-     quaImg.classList.add("card_shop_trash");
-
-   //Crear imagen aguacate 
-     let img = document.createElement("img");
-     img.classList.add("card_shop__img");
-     img.src = `${API}${element.image}`; 
-   
-   //crear el nombre de aguacate
-     let name = document.createElement("h2");
-     name.classList.add("card_shop__name");
-     name.innerHTML = element.name;
-
-   //Crear el precio 
-     let price = document.createElement("p");
-     price.classList.add("card_shop__price");
-     price.innerHTML = priceFormat.formatPrice(element.price);
-
-   //Crear Cantidad
-     let qua= document.createElement("p");
-     qua.classList.add("card_shop__qua");
-     qua.innerHTML = `x${element.quantity}`;
-
-   //Crear imgaen 
-     let trash = document.createElement("img");
-     trash.classList.add("card_shop__trash");
-     trash.src = "/assets/img/trash-bin.png";
-   //Agregar los nodos al html
-     quaImg.append(qua,trash);
-     imgName.append(img,name);
-     card.append(imgName,quaImg,price);
-     preview.append(card);
-})
-   //contanedor princiapl 
-   let containerSub =  document.createElement("div");
-    containerSub.classList.add("preview__container_sub");
-
-   //Contenedor para el subtotal 
-   let sub = document.createElement("div");
-   sub.classList.add("preview__card_sub");
-   //Valor para el total 
-   let val = document.createElement("p");
-   val.classList.add("card_sub__value");
-   val.innerHTML =  priceFormat.formatPrice(item.map(element => element.price * element.quantity).reduce((cont ,val)=> cont + val))
-   
-   //Label Subtotal
-   const subtotal = document.createElement ("h2");
-   subtotal.classList.add("card_sub__subtotal");
-   subtotal.innerHTML = "Subtotal ";
-
-   //Boton preview 
-   const checkout = document.createElement("button");
-   checkout.classList.add("card_sub__btn");
-   checkout.innerHTML = "Preview Cart"
-
-
-   
-
-   //Anadir al html
-   sub.append(subtotal,val);
-   containerSub.append(sub,checkout);
-   preview.append(containerSub);
-
-   checkout.addEventListener("click", ()=>{
-    window.location.href = '/public/checkout.html';
-   })
-
-
-   
-
-
-}
+  
 
 
 
