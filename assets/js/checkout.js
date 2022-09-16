@@ -68,7 +68,7 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
          subPrice.classList.add("checkout__price");
          subPrice.innerHTML = priceFormat.formatPrice(item.map(val => val.price * val.quantity).reduce((cont ,val)=> cont + val));
 
-        //Parrafo 
+        //Pequeno parrafo para el seller
         let p = document.createElement("p");
         p.classList.add("checkout__p");
         p.innerHTML = "Special instructions for seller";
@@ -77,7 +77,7 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
         let input = document.createElement("input");
         input.classList.add("checkout__input");
 
-        //Boton 
+        //boton checkout
         let btn = document.createElement("button");
         btn.classList.add("checkout__btn");
         btn.innerHTML = "Check out";
@@ -89,7 +89,7 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
         itemCheckout.append(contItems , contCheckout);
 
 });
-
+  //Remover los items del carrito en la part del checkout
   function removeItem (e){
      const id = e.target.dataset.id;
      const objItem = item.findIndex(obj=> obj.id === id);
