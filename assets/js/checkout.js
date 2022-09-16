@@ -95,6 +95,7 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
      const objItem = item.findIndex(obj=> obj.id === id);
      item.splice(objItem,1);
      localStorage.setItem('cart', JSON.stringify(item));
+     window.location.href = '/public/checkout.html';
      
       
   }
