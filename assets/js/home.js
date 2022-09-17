@@ -167,10 +167,10 @@ inputFind.addEventListener( 'keyup' , () => {
 
 //Cargar pagina con los item 
 window.addEventListener('DOMContentLoaded', (event) => {
-        if (localStorage.getItem('cart') !== null){
+        if (localStorage.getItem('cart') !== null &&  JSON.parse(localStorage.getItem('cart')).length >0 )  {
             let a = JSON.parse( localStorage.getItem("cart"));
             amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
-        } 
+        } else {console.log("No hay data")}
       newCart.loadCart();
          
              

@@ -109,11 +109,12 @@
             })
 
             //Carrito Amount 
-            if (localStorage.getItem('cart') !== null){
+            if (localStorage.getItem('cart') !== null && JSON.parse(localStorage.getItem('cart')).length >0 ){
                let p = JSON.parse( localStorage.getItem("cart"));
                amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
-               newCart.loadCart();
-           } 
+               
+           } else {console.log("carrito vacio")}
+           newCart.loadCart();
    
             
            

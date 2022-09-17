@@ -44,7 +44,6 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
         close.src= "/assets/img/checkout/close.png";
         close.dataset.id = element.id
 
-
         //Funciones 
         close.addEventListener("click" , (e)=>removeItem(e))
         //Agregar elementos al html

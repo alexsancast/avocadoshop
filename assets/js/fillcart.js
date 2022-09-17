@@ -4,12 +4,12 @@ import {price} from "./validInput_price.js" ;
 const API = 'https://platzi-avo.vercel.app';
 const priceFormat = new price();
 const preview = document.querySelector(".preview");
- const val2 = JSON.parse(localStorage.getItem("cart")) ;
+
 
 
 export class previewCart {
     loadCart = ()=>{
-        if (localStorage.getItem('cart') !== null){
+        if (localStorage.getItem('cart') !== null && JSON.parse(localStorage.getItem('cart')).length >0 ){
             preview.innerHTML = "";
             let item = JSON.parse(localStorage.getItem("cart")) ;
             item.forEach (element =>{
@@ -91,11 +91,13 @@ export class previewCart {
 }
 
     removeItem (e){
+        const val2 = JSON.parse(localStorage.getItem('cart')) ;
         const id = e.target.dataset.id;
         const objItem = val2.findIndex(obj=> obj.id === id);
         val2.splice(objItem,1);
         localStorage.setItem('cart', JSON.stringify(val2));
         this.loadCart();
+        
 
 }
 
