@@ -1,6 +1,5 @@
         import {price} from "./validInput_price.js" ;
         import { previewCart } from "./fillcart.js";
-    
         const API = 'https://platzi-avo.vercel.app';
         const stringItem =  localStorage.getItem('item');
         const amount = document.querySelector(".cart__amount");
@@ -111,8 +110,7 @@
             //Carrito Amount 
             if (localStorage.getItem('cart') !== null && JSON.parse(localStorage.getItem('cart')).length >0 ){
                let p = JSON.parse( localStorage.getItem("cart"));
-               amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
-               
+               amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;   
            } else {console.log("carrito vacio")}
            newCart.loadCart();
    

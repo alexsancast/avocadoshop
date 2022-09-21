@@ -157,6 +157,10 @@
   padding: 0px;
   transform: translateY(32px);
 }
+.username_menu__cart .cart__img:hover {
+  cursor: pointer;
+  transform: translateY(30px);
+}
 .username_menu__cart .cart__amount {
   display: flex;
   align-items: center;
@@ -171,10 +175,135 @@
   z-index: 2;
 }
 
+.preview {
+  min-width: 350px;
+  right: 4px;
+  top: 72px;
+  position: fixed;
+  visibility: hidden;
+  background-color: white;
+  box-shadow: 1px 5px 5px 5px rgba(34, 36, 38, 0.15);
+  transition: visibility 0s, opacity 0.6s linear;
+}
+
+.preview__card_no {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.preview__card_no .preview__card_no_img {
+  width: 60px;
+  height: 60px;
+}
+.preview__card_no .preview__card_no_p {
+  font-size: 18px;
+}
+.preview__card_no h1 {
+  font-family: "Arvo", serif;
+  font-size: 10px;
+}
+
+.preview__card_shop {
+  display: grid;
+  grid-template-columns: 200px 20px;
+  grid-template-rows: 50px 30px;
+  column-gap: -40px;
+  position: relative;
+  background-color: white;
+}
+
+.preview__name {
+  display: flex;
+  align-items: center;
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.card_shop__img {
+  width: 75px;
+  height: 75px;
+}
+
+.card_shop__name {
+  font-size: 12px;
+  font-family: "Arvo", serif;
+  font-weight: 700;
+}
+
+.card_shop__price {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  position: absolute;
+  top: -20px;
+  left: 70px;
+}
+
+.card_shop__qua {
+  grid-area: quality;
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.card_shop_trash {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  position: absolute;
+  left: 230px;
+}
+
+.card_shop__trash {
+  width: 20px;
+  height: 20px;
+}
+.card_shop__trash:hover {
+  cursor: pointer;
+}
+
+.preview__container_sub {
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+.preview__container_sub .card_sub__btn {
+  background-color: #65dd75;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  font-family: "Arvo", serif;
+  font-size: 13px;
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+.preview__container_sub .card_sub__btn:hover {
+  cursor: pointer;
+  background-color: rgb(69, 182, 98);
+}
+
+.preview__card_sub {
+  position: absolute;
+  bottom: -10px;
+  left: 25px;
+}
+.preview__card_sub .card_sub__subtotal {
+  margin-bottom: -10px;
+  font-size: 20px;
+  font-family: "Koulen", cursive;
+  font-weight: 400;
+  color: rgb(132, 126, 126);
+}
+
 /*---------Footer------------------*/
 .footer {
   display: grid;
   justify-content: center;
+  box-shadow: 0px -1px 1px 0px rgba(0, 0, 0, 0.26);
   grid-template-columns: 500px 400px 500px;
   grid-template-rows: 50px 100px;
   column-gap: -40px;
@@ -274,6 +403,9 @@ body {
   grid-row: 1/2;
   margin-bottom: 20px;
 }
+.directions__title h1 {
+  font-family: "Arvo", serif;
+}
 .directions__title img {
   width: 130px;
   height: 130px;
@@ -285,6 +417,12 @@ body {
   grid-template-columns: 1fr 1fr;
   column-gap: 50px;
   row-gap: 20px;
+}
+.container__directions h2 {
+  font-family: "Arvo", serif;
+}
+.container__directions p {
+  font-family: "Varela", sans-serif;
 }
 
 .directions__hours {
@@ -316,6 +454,7 @@ body {
   font-size: 17px;
   width: 160px;
   height: 50px;
+  font-family: "Arvo", serif;
 }
 
 .container__directions h2 {

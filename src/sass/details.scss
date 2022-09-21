@@ -28,7 +28,7 @@
 
 .container__name {
     grid-column: 2/2;
-    
+    font-family: variable.$title-font;
 }
 
 .container__desc {
@@ -36,6 +36,8 @@
     grid-row: 2/2;
     font-size: var(--lg);
     color: rgb(132, 126, 126);
+    font-family: variable.$description-font;
+    
 }
 
 .container__price {
@@ -50,7 +52,7 @@
     border: none;
     border-radius: 4px;
     color: #fff;
-    font-family: inherit;
+    font-family: variable.$sub-title-font;
     font-size: 15px;
     width: 100px;
     height: 35px;
@@ -131,33 +133,41 @@
     display: grid;
     grid-template-columns: 100px 170px;
     grid-template-rows: 50px 50px 50px;
+
+
+    h1{
+
+        font-size: 14px;
+        font-family: variable.$title-font;
+
+    }
+
+
+    p{
+        font-family: variable.$description-font;
+        font-size: 14px;
+
+    }
    
 }
 
 
-.container__attributes h1 {
-    font-size: 17px;
-    font-weight: bold;
-}
 .container__attributes .hardinessh{
     grid-column: 1/2;
+    
 }
 
 .container__attributes .tasteh{
     grid-column: 1/2;
     grid-row: 3/4;
+
 }
 
 .container__attributes .pshape {
     grid-column: 3/2;
     grid-row: 1/2;
+
 }
 
-
-/*loading button*/
-
-// .container__btn_loading .btn__add {
-//     visibility: hidden;
-// }
 
 

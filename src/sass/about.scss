@@ -25,6 +25,14 @@
     width: 350px;
     transition: all 300ms;
 
+    h2{
+        font-family: variable.$title-font;
+    }
+
+    p{
+        font-family: variable.$description-font;
+    }
+
 
 }
 .card:hover{

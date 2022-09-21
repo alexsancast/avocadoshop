@@ -4,6 +4,7 @@ import {price} from "./validInput_price.js" ;
 const API = 'https://platzi-avo.vercel.app';
 const priceFormat = new price();
 const preview = document.querySelector(".preview");
+const amount = document.querySelector('.cart__amount');//cantidad de productos
 
 
 
@@ -86,7 +87,24 @@ export class previewCart {
        
   
         //En caso de que no haya items para que no me lance un error
-         }else {console.log("No tienes items en el carrito")}   
+         }else {
+            preview.innerHTML= "";
+            //Contenedor para las carts
+            let card = document.createElement("div");
+            card.classList.add("preview__card_no");
+            //Imagen para el carrito 
+            let img = document.querySelector("img");
+            img.classList.add("preview__card_no_img");
+            img.src = "/assets/img/shopping-cart.gif"
+            //Parrafo para el aviso 
+            let p = document.createElement("h1");
+            p.classList.add("preview__card_no_p");
+            p.innerHTML= "You don't have avocados ";
+            //Agregar al html 
+            card.append(img,p);
+            preview.append(card)
+
+         }   
       
 }
 
@@ -96,7 +114,14 @@ export class previewCart {
         const objItem = val2.findIndex(obj=> obj.id === id);
         val2.splice(objItem,1);
         localStorage.setItem('cart', JSON.stringify(val2));
+        if (JSON.parse(localStorage.getItem('cart')).length >0 ){
+            amount.innerHTML = val2.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;
+            
+        }else {amount.innerHTML = 0}
+
         this.loadCart();
+       
+        
         
 
 }
