@@ -422,6 +422,7 @@ body {
   border-radius: 10px;
   background-color: rgb(251, 246, 246);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
 }
 .container__items_checkout .container__checkout .container__subprice {
   display: flex;
@@ -520,6 +521,18 @@ body {
 }
 .items__cart .items__close:hover {
   cursor: pointer;
+}
+
+.checkout__no_img {
+  position: absolute;
+  left: 110px;
+  top: 50px;
+}
+
+.checkout__no_p {
+  position: absolute;
+  left: 110px;
+  top: 150px;
 }
 
 /*# sourceMappingURL=checkout.css.map */

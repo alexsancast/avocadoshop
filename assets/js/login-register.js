@@ -10,6 +10,13 @@ const passwordc = document.getElementById("passwordc");
 /* Botones para los eventos*/
 const btnLogin = document.querySelector('.login__btn');
 const btnRegister = document.querySelector('.register__btn');
+//Variables para validad la entrada del localstorage
+let fullN = '';
+let mail = '';
+let pass = '';
+let passC = '';
+const user = [];
+
 //Instanciar la clase
 const checkInput = new validInput();
 //capturamos los datos del HTML
@@ -58,7 +65,11 @@ function register () {
 
     }
 
-     else {checkInput.setSuccessFor(name)}
+     else {
+        checkInput.setSuccessFor(name)
+         fullN = true 
+         
+        }
     
        //Validar correo
 
@@ -70,7 +81,10 @@ function register () {
                  checkInput.setErrorFor(email, "The email is not valid")
                 return false;
       }
-     else {checkInput.setSuccessFor(email)}
+     else {
+        checkInput.setSuccessFor(email)
+        mail = true;
+    }
 
        //Validar contrasena
 
@@ -84,7 +98,11 @@ function register () {
         return false
     }
     
-    else { checkInput.setSuccessFor(passwordr)}
+    else { 
+        checkInput.setSuccessFor(passwordr)
+        pass = true;
+        
+    }
     
     //Confirmar password
 
@@ -101,9 +119,29 @@ function register () {
         checkInput.setErrorFor(passwordc, "Passwords have to be the same");
     }
     else { 
-        checkInput.setSuccessFor(passwordc)
-        checkInput.setSuccessFor(passwordr)
-    
+        checkInput.setSuccessFor(passwordc);
+        checkInput.setSuccessFor(passwordr);
+        passC = true;
+    }
+
+    ///////---Validar el correo si existe en la base de datos---////
+    if (fullN === true && mail === true && pass === true && passC === true){
+        let test;
+        if (localStorage.getItem('user') !== null){
+            test = JSON.parse (localStorage.getItem("user"));
+            const value = test.some( item => item.emailValue === emailValue);
+            if (value){
+                checkInput.setErrorFor(email,"The email already exist")
+            }else { 
+                test.push({nameValue,emailValue,passwordrValue});
+                localStorage.setItem('user' , JSON.stringify(test));
+            }
+          
+        }else {
+            user.push({nameValue,emailValue,passwordrValue})
+            localStorage.setItem('user' , JSON.stringify(user));
+        }
+        
     }
     }
         
@@ -127,18 +165,39 @@ function login () {
             return false;
        }
 
-       else  { checkInput.setSuccessFor(username)}
+       else  { checkInput.setSuccessFor(username)
+                mail = true;
+               
+                 }
 
          if (passwordsValue == "") {
             checkInput.setErrorFor(passwords, "The password field is required");
+            return false
             
          } 
 
         else if (passwordsValue.length < 9) {
             checkInput.setErrorFor(passwords, "The password must have at least 8 characters");
+            return false
         }
 
-        else {checkInput.setSuccessFor(passwords)}
+        else {
+            checkInput.setSuccessFor(passwords);
+           pass = true;
+           
+            }
+
+        //----Vlidad corre y pass si existen en la base de datos
+        if (mail === true && pass === true){
+            let us;
+            us = JSON.parse (localStorage.getItem("user"));
+            const value = us.some(element => element.emailValue === usernameValue);
+            if (value){
+                let isLog = us.some(element =>element.emailValue === usernameValue && element.passwordrValue === passwordsValue);
+                console.log(isLog);
+            }else { console.log("No existe el correo , por favor registrate ")}
+        }
+
     
 
 }

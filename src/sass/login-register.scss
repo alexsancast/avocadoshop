@@ -82,6 +82,10 @@ main{
     top: -185px;
     left: 10px;
     transition: left 500ms cubic-bezier(0.175,0.885,0.320,1.275);
+
+    a{
+        font-size: 14px;
+    }
 }
 
 .container__login_register form  {
@@ -102,7 +106,7 @@ main{
 }
 
 .container__login_register .form__register {
-    bottom: -300px;
+    bottom: -270px
 }
 
 .container__login_register input {
@@ -117,7 +121,9 @@ main{
 
 .container__login_register button {
     padding: 10px 40px;
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: -70px;
+    margin-right: 10px;
     border: none;
     font-size: 14px;
     cursor: pointer;
@@ -125,6 +131,7 @@ main{
     border-radius: 4px;
     color:#fff;
     background-color: variable.$avocado-color
+    
 }
 
 .form__login {
@@ -164,7 +171,7 @@ main{
     left: 5px;
     visibility: visible;
     font-size: 10px;
-    transition: all 0.6s ease;
+    
    
 }
 
