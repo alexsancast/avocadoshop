@@ -75,10 +75,6 @@
     
 }
 
-.container__btn_loading .btn__add {
-    visibility: hidden;
-    opacity: 0;
-}
 
 .container__btn_loading::after{
     content: "";

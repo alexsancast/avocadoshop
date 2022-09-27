@@ -308,9 +308,8 @@
   grid-template-rows: 50px 100px;
   column-gap: -40px;
   width: 100%;
-  height: 200px;
-  margin-top: 50px;
-  padding-top: 30px;
+  height: 250px;
+  margin-top: 80px;
 }
 .footer h1 {
   font-size: 14px;
@@ -380,6 +379,66 @@
 }
 
 /*Variables*/
+.menu_ham {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -1700px;
+  top: 0;
+  z-index: 12;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+}
+
+.menu_ham .nav .nav__img_profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: auto;
+}
+.menu_ham .nav .nav__img_profile .img_profile {
+  width: 26px;
+  height: 26px;
+  padding-top: 10px;
+}
+
+.menu_ham .nav {
+  margin-top: 0;
+  margin-left: -12px;
+  width: 100%;
+  max-width: 200px;
+  height: 100%;
+  background: white;
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  transition: all 300ms;
+}
+.menu_ham .nav .nav__item_li img {
+  width: 20px;
+  height: 15px;
+}
+.menu_ham .nav li {
+  padding: 10px;
+}
+.menu_ham .nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+}
+.menu_ham .nav a:hover {
+  color: var(--hospital-green);
+}
+.menu_ham .nav .nav__img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 12px;
+  top: 7px;
+}
+
+/*Variables*/
 /*Barcharts */
 /*---Lammar los barchart---*/
 body {
@@ -391,173 +450,39 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
+  margin-top: 100px;
+  margin-left: 150px;
 }
-
-.container__img {
-  margin-left: 240px;
-  align-items: center;
-  gap: 20px;
-  margin-top: 80px;
-  display: flex;
-  margin-bottom: 20px;
-}
-.container__img h1 {
+.container .container__account h1 {
   font-family: "Arvo", serif;
-  font-size: 20px;
+  font-size: 24px;
+  text-decoration: underline;
 }
-.container__img img {
-  width: 80px;
-  height: 80px;
+.container .container__account h2 {
+  font-family: "Varela", sans-serif;
+  font-size: 16px;
+  color: rgb(132, 126, 126);
 }
-
-.container__items_checkout {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.container .container__account img {
+  width: 100px;
+  height: 100px;
 }
-.container__items_checkout .container__checkout {
-  width: 300px;
-  height: 300px;
-  border-radius: 10px;
-  background-color: rgb(251, 246, 246);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-.container__items_checkout .container__checkout .container__subprice {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.container__items_checkout .container__checkout .container__subprice .checkout__price {
-  font-size: 20px;
-  font-family: "Arvo", serif;
-}
-.container__items_checkout .container__checkout .container__inputbtn {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: -20px;
-}
-.container__items_checkout .container__checkout .container__inputbtn .checkout__input {
-  width: 200px;
-  height: 120px;
-  border: none;
-  outline: none;
-}
-.container__items_checkout .container__checkout .container__inputbtn .checkout__btn {
+.container .container__account button {
   background-color: #65dd75;
   border: none;
-  border-radius: 25px;
+  border-radius: 4px;
   color: #fff;
-  font-size: 25px;
-  font-weight: 100px;
-  width: 180px;
-  height: 55px;
-  transition: all 300ms;
-  margin-top: 10px;
-  font-family: "Arvo", serif;
-}
-.container__items_checkout .container__checkout .container__inputbtn .checkout__btn:hover {
-  cursor: pointer;
-  background-color: rgb(69, 182, 98);
-}
-.container__items_checkout .container__checkout .checkout__subtotal {
-  margin-left: 10px;
-  font-family: "Arvo", serif;
-}
-.container__items_checkout .container__checkout .checkout__price {
-  margin-right: 15px;
-}
-.container__items_checkout img {
-  width: 80px;
-  height: 80px;
-}
-
-.checkout__btn_loading::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  border: 4px solid transparent;
-  border-top-color: white;
-  border-radius: 50%;
-  animation: button-loading-spinner 1s linear infinite;
-}
-
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-.items__cart {
-  display: flex;
-  align-items: center;
-  margin: 5px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  height: 90px;
-  width: 600px;
-  justify-content: space-around;
+  font-family: "Koulen", cursive;
+  font-size: 15px;
+  width: 100px;
+  height: 35px;
+  grid-column: 2/2;
+  grid-row: 4/4;
   position: relative;
 }
-.items__cart .items__img {
-  width: 80px;
-  height: 80px;
-  position: absolute;
-  left: 0px;
-}
-.items__cart .items__name {
-  font-size: 13px;
-  font-family: "Arvo", serif;
-  margin-left: -80px;
-  position: absolute;
-  left: 160px;
-}
-.items__cart .items__price {
-  position: absolute;
-  left: 260px;
-  font-family: "Arvo", serif;
-}
-.items__cart .items__quan {
-  position: absolute;
-  left: 360px;
-  font-family: "Arvo", serif;
-}
-.items__cart .items__quanprice {
-  position: absolute;
-  left: 450px;
-  font-family: "Arvo", serif;
-}
-.items__cart .items__close {
-  width: 9px;
-  height: 9px;
-  position: absolute;
-  left: 550px;
-}
-.items__cart .items__close:hover {
+.container .container__account button:hover {
+  background-color: rgb(69, 182, 98);
   cursor: pointer;
 }
 
-.checkout__no_img {
-  position: absolute;
-  left: 110px;
-  top: 50px;
-}
-
-.checkout__no_p {
-  position: absolute;
-  left: 110px;
-  top: 150px;
-}
-
-/*# sourceMappingURL=checkout.css.map */
+/*# sourceMappingURL=account.css.map */

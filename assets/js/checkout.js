@@ -1,12 +1,13 @@
 
 import {price} from "./validInput_price.js" ;
 const API = 'https://platzi-avo.vercel.app';
+import { previewCart } from "./fillcart.js";
 //Capturamos los datos del carrito
+const newCart = new previewCart();
 const priceFormat = new price();
 const itemCheckout = document.querySelector(".container__items_checkout");
 const item = JSON.parse(localStorage.getItem('cart')) ;
 const amount = document.querySelector('.cart__amount');//cantidad de productos
-
 const contItems = document.querySelector(".container__items");
 const contCheckout = document.querySelector(".container__checkout");
 
@@ -84,6 +85,9 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
       btn.classList.add("checkout__btn");
       btn.innerHTML = "Check out";
 
+      btn.addEventListener("click" ,removeKey);
+      
+
       //Agregar al html
       contSub.append(subtotal,subPrice);
       contInputBtn.append(p,input,btn)
@@ -107,6 +111,21 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
 
   }
 
+      //Cargar la cantidad en el carrito 
+  if (localStorage.getItem('cart') !== null &&  JSON.parse(localStorage.getItem('cart')).length >0 )  {
+      let a = JSON.parse( localStorage.getItem("cart"));
+      amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
+    } else {console.log("No hay data")}
+ 
+ //**--------------------------------------------- */
+ 
+    //Cargar el usuario para mostrar
+    // let p = JSON.parse(sessionStorage.getItem("session"));
+    // myAccount.innerHTML =p.nameValue;
+ 
+    newCart.loadCart();
+     
+
    
 
 });
@@ -123,6 +142,14 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
      localStorage.setItem('cart', JSON.stringify(item));
      window.location.href = '/public/checkout.html';
      
+
+    
       
+  }
+
+  function removeKey (){
+    window.location.href = '/public/thanks.html';
+    localStorage.removeItem('cart');
+    
   }
 

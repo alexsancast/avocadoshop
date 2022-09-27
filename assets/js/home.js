@@ -11,6 +11,7 @@ const search = [];
 const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
 const inputFind = document.querySelector(".search__input"); // Input para el buscador
+const myAccount = document.querySelector(".username_menu__p");
 
 
 //Llamar a la api para obetener los datos & cargar la pagina
@@ -76,7 +77,8 @@ const inputFind = document.querySelector(".search__input"); // Input para el bus
             button.classList.add("container__btn_loading")
             button.innerHTML = ""
             setTimeout(()=>{
-               button.classList.remove("container__btn_loading");button.innerHTML = ""
+               button.classList.remove("container__btn_loading");
+               button.innerHTML = ""
                button.innerHTML = "Add";
             },1000)})
        
@@ -167,10 +169,19 @@ inputFind.addEventListener( 'keyup' , () => {
 
 //Cargar pagina con los item 
 window.addEventListener('DOMContentLoaded', (event) => {
+         //Cargar la cantidad en el carrito 
         if (localStorage.getItem('cart') !== null &&  JSON.parse(localStorage.getItem('cart')).length >0 )  {
             let a = JSON.parse( localStorage.getItem("cart"));
             amount.innerHTML = a.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;  
         } else {console.log("No hay data")}
+
+   //**--------------------------------------------- */
+
+        //Cargar el usuario para mostrar
+        // let p = JSON.parse(sessionStorage.getItem("session"));
+        // myAccount.innerHTML =p.nameValue;
+
+
       newCart.loadCart();
          
              

@@ -1,0 +1,23 @@
+/*Variables*/
+@use 'barchart/variable';
+
+/*Barcharts */
+@use 'barchart/navbar';
+@use 'barchart/reset'; 
+@use 'barchart/footer';
+@use 'barchart/menuham';
+/*---Lammar los barchart---*/
+@include reset.format; // Reseteamos toda la pagina
+
+//Contenedor principal
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    align-items: center;
+    
+
+    h1{
+        font-family: variable.$title-font
+    }
+}

@@ -101,9 +101,12 @@
          
          //Boton loader 
            button.addEventListener("click" ,()=> {
-               button.classList.add("container__btn_loading")
+               button.classList.add("container__btn_loading");
+               button.innerHTML = ""
                setTimeout(()=>{
-                  button.classList.remove("container__btn_loading")
+                  button.innerHTML = ""
+                  button.classList.remove("container__btn_loading");
+                  button.innerHTML = "ADD TO CART"
                },1000)
             })
 

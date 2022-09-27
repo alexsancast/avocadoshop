@@ -1,0 +1,58 @@
+/*Variables*/
+@use 'barchart/variable';
+
+/*Barcharts */
+@use 'barchart/navbar';
+@use 'barchart/reset'; 
+@use 'barchart/footer';
+@use 'barchart/menuham';
+/*---Lammar los barchart---*/
+@include reset.format; // Reseteamos toda la pagina
+
+.container {
+    margin-top: 100px;
+    margin-left: 150px;
+
+
+    .container__account {
+        h1{
+
+            font-family: variable.$title-font;
+            font-size: 24px;
+            text-decoration: underline;
+        }
+
+        h2{
+            font-family: variable.$description-font;
+            font-size: 16px;
+            color:rgb(132, 126, 126); ;
+
+        } 
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        button{
+            background-color:variable.$avocado-color;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-family: variable.$sub-title-font;
+            font-size: 15px;
+            width: 100px;
+            height: 35px;
+            grid-column: 2/2;
+            grid-row :4/4 ;
+            position: relative;
+           
+           
+        
+            &:hover{
+                background-color: rgb(69, 182, 98);
+                cursor: pointer;
+        
+            }
+        }
+    }
+}

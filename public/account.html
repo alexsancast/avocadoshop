@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/details.css">
+    <link rel="stylesheet" href="/assets/css/account.css">
     <script src="https://kit.fontawesome.com/0f23cb2a80.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.min.js"></script> -->
     <link rel="stylesheet" href="/assets/css/loading.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-    
     
     
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet"> 
-   
+    
 
 </head>
 <body>
@@ -44,9 +43,9 @@
    
            </nav>
         </div>
+          
 
-        
-        <div class="header__search" >
+        <div class="header__search">
             <input type="search" class="search__input" placeholder="Find your Avocado...">
             <div class="search__btn">  
                 <i  class="fa-solid fa-magnifying-glass  " ></i>
@@ -55,17 +54,16 @@
         </div>  
 
 
-
         <div class="header__username_menu">
 
             <div class="username_menu__profile">
-                <a href="/public/account.html"> <img class="profile__img" src="/assets/img/navbar/circle-user-regular.svg" alt=""> </a>  
-                <p> My account</p>
+                <img class="profile__img" src="/assets/img/navbar/circle-user-regular.svg" alt="">
+                <p class="username_menu__p"> My account</p>
             </div>
     
             <div class="username_menu__cart">
                 <div class="cart__amount" id="amount">0</div>
-                <img class="cart__img" src="/assets/img/navbar/wicker-basket.png">
+                <img class="cart__img" src="/assets/img/navbar/wicker-basket.png"  type="button" id="btn-cart">
             </div>
     
       
@@ -77,56 +75,49 @@
     <div class="lds-ring  loader"><div></div><div></div><div></div><div></div></div>
 
 
-
-
-
-
-<aside class="aside ">
-
+<div class="menu_ham">
     <ul class="nav">
         <div class="nav__img_profile">
-            <img class="img-profile_img" src="./Asset/logos/circle-user-solid.svg" alt="">
+            <img class="img_profile" src="/assets/img/menuham/circle-user-regular.svg" alt="">
             <p> My account</p>
             </div>
-        <li class="nav__item_a"><a class="item_a" href="./about.html"> <img src="./Asset/logos/house-chimney-solid.svg" alt=""> About us</a></li>
-        <li class="nav__item_a"><a class="item_a" href="./location.html"> <img src="./Asset/logos/location-dot-solid.svg" alt=""> Location</a></li>
-        <li class="nav__item_a"><a class="item_a" href="/"> <img src="./Asset/logos/headset-solid.svg" alt=""> Support</a></li>
+        <li class="nav__item_li"><a class="nav__item_a" href="./about.html"> <img src="/assets/img/menuham/house-chimney-solid.svg" alt=""> About us</a></li>
+        <li class="nav__item_li"><a class="nav__item_a" href="./location.html"> <img src="/assets/img/menuham/location-dot-solid.svg" alt=""> Location</a></li>
+        <li class="nav__item_li"><a class="nav__item_a" href="/"> <img src="/assets/img/menuham/headset-solid.svg" alt=""> Support</a></li>
 
 
-        <img class="nav__img" src="./Asset/logos/xmark-solid.svg" alt="">
+        <img class="nav__img" src="/assets//img/menuham/xmark-solid.svg" alt="">
     </ul>
      
-</aside>
+</div>
 
 
 
+
+<div class="container">
+
+    <div class="container__account">
+        <h1 class="account__title">My account</h1>
+        <img class="account__img" src="/assets/img/man.png" alt="">
+        <h1 class="account__title_name">Full Name</h1>
+        <h2 class="account__name">Alexander Castillo</h2>
+        <h1 class="account__title_email">Email</h1>
+        <h2 class="account__email">alexsancast@gmail.com</h2>
+        <h1 class="account__title_orders">My orders</h1>
+        <button class="account__btn">Orders</button>
+    </div>
+
+</div>
 
 <div id="feedback-bg-info" class="preview" >
  
 </div>
-<div class="container">
-
-</div>
-
-
-
-
-<div class="container__attributes">
-
-    <h1 class="shapeh">Shape</h1>
-    <h1 class="hardinessh">Hardiness</h1>
-    <h1 class="tasteh">Taste</h1>
-</div>
-
-
-
-
 
 
 
 <footer class="footer">
 
-
+      
     <div class="footer__title_address">
         <img src="/assets/img/footer/aguacate.png" alt="">
         <h1>Our shop</h1>
@@ -173,6 +164,7 @@
 
 <div class="authors">
     <p> © 2022 Alexsancast, Inc. All rights reserved. </p>
+  
 </div>
 
 
@@ -180,9 +172,13 @@
 
 
 
-<script src="/assets/js/find.js"></script> 
-<script src="/assets/js/details.js" type="module"></script>
+
+
+<script src="/assets/js/slidemenu.js"></script>
+<!-- <script src="/assets/js/scroll.js" type="module"></script> -->
 <script src="/assets/js/loading.js"></script>
+<script src="/assets/js/account.js" type="module"></script>
+
 
 
     

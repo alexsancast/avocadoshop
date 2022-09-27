@@ -194,8 +194,16 @@ function login () {
             const value = us.some(element => element.emailValue === usernameValue);
             if (value){
                 let isLog = us.some(element =>element.emailValue === usernameValue && element.passwordrValue === passwordsValue);
-                console.log(isLog);
-            }else { console.log("No existe el correo , por favor registrate ")}
+                if (isLog){
+                    let session = us.find(element => element.emailValue == usernameValue);
+                    sessionStorage.setItem('session', JSON.stringify(session));
+                    window.location.href = '/public/home.html';
+                } else { 
+                    checkInput.setErrorFor(username,"username and passwords are incorrect");
+                    checkInput.setErrorFor(passwords,"username and passwords are incorrect");
+                }    
+            }else { checkInput.setErrorFor(username,"The email do not exist ")
+           }
         }
 
     

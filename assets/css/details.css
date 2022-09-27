@@ -203,6 +203,7 @@
 }
 .preview__card_no h1 {
   font-family: "Arvo", serif;
+  font-size: 10px;
 }
 
 .preview__card_shop {
@@ -307,8 +308,9 @@
   grid-template-rows: 50px 100px;
   column-gap: -40px;
   width: 100%;
-  height: 250px;
-  margin-top: 80px;
+  height: 200px;
+  margin-top: 50px;
+  padding-top: 30px;
 }
 .footer h1 {
   font-size: 14px;
@@ -434,11 +436,6 @@
 }
 .container__btn p {
   margin: auto;
-}
-
-.container__btn_loading .btn__add {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .container__btn_loading::after {

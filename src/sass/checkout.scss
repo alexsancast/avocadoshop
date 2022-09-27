@@ -97,6 +97,9 @@
                     cursor: pointer;
                     background-color: rgb(69, 182, 98);
                 }
+
+       
+                
                 
             }
 
@@ -123,7 +126,32 @@
     
 }
 
+.checkout__btn_loading::after{
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border:4px solid transparent;
+    border-top-color: #ffff ;
+    border-radius: 50%;
+    animation:button-loading-spinner 1s linear  infinite ;
 
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to{
+        transform: rotate(1turn);
+    }
+}
 .items__cart{
    display: flex;
    align-items: center;
