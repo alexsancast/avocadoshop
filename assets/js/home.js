@@ -74,15 +74,14 @@ const myAccount = document.querySelector(".username_menu__p");
         button.addEventListener('click', (e) => { addToCart(e, data);});
         //Boton loeader
         button.addEventListener("click" ,()=> {
-            button.classList.add("container__btn_loading")
-            button.innerHTML = ""
-            setTimeout(()=>{
-               button.classList.remove("container__btn_loading");
-               button.innerHTML = ""
-               button.innerHTML = "Add";
-            },1000)})
+            priceFormat.setAddNotification("Product Added");
+        })
+    
+    
+    
+    })
        
-          })
+          
 }
 
 
@@ -114,10 +113,9 @@ function addToCart(e, data) {
                    
 }             
            let p = JSON.parse( localStorage.getItem("cart"));
-           setTimeout(()=>{
             amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
             newCart.loadCart();
-         },1000)
+        
         
          
        

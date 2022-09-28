@@ -21,6 +21,8 @@ main{
     max-width: 700px;
     position: relative;
     max-height: 100px;
+
+   
     
 }
 
@@ -33,6 +35,12 @@ main{
     background-color: rgba(24, 248, 147, 0.5);
     border-radius: 10px;
     height: 250px;
+
+    h3 {
+        font-weight: 400;
+        font-size: 20px;
+        font-family: variable.$description-font;
+    }
 }
 
 .container__back_box div {
@@ -46,10 +54,11 @@ main{
     margin-top: 30px;
 }
 
-.container__back_box div h3 {
-    font-weight: 400;
-    font-size: 26px;
+
+.back_box__login{
+    margin-right: 70px;
 }
+
 
 .container__back_box button{
     padding: 10px 40px;
@@ -96,10 +105,23 @@ main{
     border-radius: 20px;
 }
 
-.container__login_register form h2{
+.container__login_register  h1{
     font-size: 30px;
+    font-family: variable.$description-font;
+}
+
+.container__login_register  p{
+    font-family: variable.$description-font;
 
 }
+
+.container__login_register  a{
+    font-family: variable.$description-font;
+    font-size: 13px ;
+
+}
+
+
 
 .container__login_register .form__login {
     bottom: -225px;
@@ -110,6 +132,7 @@ main{
 }
 
 .container__login_register input {
+   
     width: 260px;
     margin-top: 20px;
     padding: 10px;
@@ -117,6 +140,8 @@ main{
     background: #f2f2f2;
     outline: none;
     border-radius: 10px;
+    font-family: variable.$sub-title-font;
+    font-size: 15px;
 }
 
 .container__login_register button {
@@ -125,13 +150,16 @@ main{
     margin-bottom: -70px;
     margin-right: 10px;
     border: none;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
     outline: none;
     border-radius: 4px;
     color:#fff;
-    background-color: variable.$avocado-color
-    
+    background-color: variable.$avocado-color;
+    font-family: variable.$description-font;
+    position: relative;
+    width: 150px;
+    height: 50px;
 }
 
 .form__login {
@@ -146,35 +174,52 @@ main{
 
 /*Form Control*/
 
-.form__control.error input {
-    border: solid;
-    border-color: #e74c3c;
+.form__control.error img {
+   visibility: visible;
   
 }
 
-.form__control.success input {
-    border: solid;
-    border-color: #2ecc71;
-    
-}
 
-.form__control.success  small {
-    border-color: #2ecc71;
-    visibility: hidden;
-}
-
-
-.form__control small {
-    color: #e74c3c;
-    position: absolute;
-    top:65px;
-    left: 5px;
-    visibility: visible;
-    font-size: 10px;
-    
-   
-}
 
 .form__control {
     position: relative;
+
+    img {
+        width: 20px;
+        height: 20px;
+        right: 50px;
+        top: 29px;
+        position: absolute;
+        visibility: hidden;
+    }
 }
+
+//Boton loader
+.container__btn_loading::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border:4px solid transparent;
+    border-top-color: #ffff ;
+    border-radius: 50%;
+    animation:button-loading-spinner 1s linear  infinite ;
+
+
+}
+
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to{
+        transform: rotate(1turn);
+    }
+}
+

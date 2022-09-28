@@ -101,13 +101,7 @@
          
          //Boton loader 
            button.addEventListener("click" ,()=> {
-               button.classList.add("container__btn_loading");
-               button.innerHTML = ""
-               setTimeout(()=>{
-                  button.innerHTML = ""
-                  button.classList.remove("container__btn_loading");
-                  button.innerHTML = "ADD TO CART"
-               },1000)
+             priceFormat.setAddNotification("Product Added");
             })
 
             //Carrito Amount 
@@ -130,7 +124,6 @@
     //Anadir al carrito 
   
      function addToCart(input){
-      
         let inputAmount = Number(input.value) ;
         let product = itemObject ;
         if (localStorage.getItem('cart') !== null){
@@ -159,10 +152,9 @@
               
               if (localStorage.getItem('cart') !== null){
                let p = JSON.parse( localStorage.getItem("cart"));
-               setTimeout(()=>{
                 amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ; 
                 newCart.loadCart();
-             },1000)
+          
           
 
 
