@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/account.css">
+    <link rel="stylesheet" href="/assets/css/support.css">
     <script src="https://kit.fontawesome.com/0f23cb2a80.js" crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.0.0/turbolinks.min.js"></script> -->
     <link rel="stylesheet" href="/assets/css/loading.css">
@@ -15,8 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet"> 
-    <title>My account</title>
-    
+    <title>Contac Us</title>
 
 </head>
 <body>
@@ -39,7 +38,7 @@
                 <ul class="nav__ul">
                     <li class="ul__item_li"><a class="ul__item_a" href="./about.html"> About Me</a></li>
                     <li class="ul__item_li"><a class="ul__item_a" href="./location.html">Location</a></li>
-                    <li class="ul__item_li"><a class="ul__item_a" href="./support.html">Support</a></li>
+                    <li class="ul__item_li"><a class="ul__item_a" href="/">Support</a></li>
                 </ul>
    
            </nav>
@@ -58,7 +57,7 @@
         <div class="header__username_menu">
 
             <div class="username_menu__profile">
-                <img class="profile__img" src="/assets/img/navbar/circle-user-regular.svg" alt="">
+             <a href="/public/account.html"> <img class="profile__img" src="/assets/img/navbar/circle-user-regular.svg" alt=""> </a>   
                 <p class="username_menu__p"> My account</p>
             </div>
     
@@ -96,18 +95,22 @@
 
 
 <div class="container">
+    <div class="container__img">
 
-    <div class="container__account">
-        <h1 class="account__title">My account</h1>
-        <img class="account__img" src="/assets/img/man.png" alt="">
-        <h1 class="account__title_name">Full Name</h1>
-        <h2 class="account__name">Alexander Castillo</h2>
-        <h1 class="account__title_email">Email</h1>
-        <h2 class="account__email">alexsancast@gmail.com</h2>
-        <h1 class="account__title_orders">My orders</h1>
-        <button class="account__btn">Orders</button>
+        <img  src="/assets/img/submit3.jpg" alt="">
     </div>
+   
 
+
+   <div class="container__form">
+    <form class="form" action="">
+        <h1 class="container__title">Send us a Message</h1>
+        <input class="form__input1" type="text" placeholder="Name">
+        <input class="form__input2" type="text" placeholder="Email">
+        <textarea class="form__input3"  rows="10" cols="40">Escribe tu comentario....</textarea>
+        <button type="submit">Submit</button>
+    </form>
+   </div>
 </div>
 
 <div id="feedback-bg-info" class="preview" >
@@ -117,8 +120,6 @@
 
 
 <footer class="footer">
-
-      
     <div class="footer__title_address">
         <img src="/assets/img/footer/aguacate.png" alt="">
         <h1>Our shop</h1>
@@ -157,7 +158,7 @@
       <div class="footer__contactus">
         <p><img  src="/assets/img/footer/at-solid.svg" alt=""> alexsancastg@gmail.com </p>
         
-        <p><img src="/assets/img/footer/phone-solid.svg" alt=""> 809-406-2976 / 809-8130337</p>
+        <p><img src="/assets/img/footer/phone-solid.svg" alt=""> 809-406-2976 / 809-813-0337</p>
         
       </div>
   
@@ -174,15 +175,12 @@
 
 
 
-
+<script src="/assets/js/support.js" type="module" ></script>
 <script src="/assets/js/slidemenu.js"></script>
 <!-- <script src="/assets/js/scroll.js" type="module"></script> -->
 <script src="/assets/js/loading.js"></script>
-<script src="/assets/js/account.js" type="module"></script>
 
 
-
-    
 </body>
 </html>
 

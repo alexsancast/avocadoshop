@@ -5,7 +5,6 @@
 .header{
     display: flex;
     justify-content:space-around;
-    margin-top: 0rem;
     box-shadow: 0 1px 2px 0 rgba(34,36,38,.15); 
     align-items: center;
 	padding: 10px 10px;
@@ -23,15 +22,15 @@
 
 /*----------Slide Menu Phone----------*/
 
-.aside {
-    display: none;
-}
+
 .header__btn_ham {
+    transform: translateX(80px);
     display: none;
-    width: 25px;
-    height:25px;
-    transform: translateY(1px);
-    transform: translateX(-90px);
+
+    img{
+        width: 30px;
+        height: 30px;
+    }
     
 }
 
@@ -39,6 +38,7 @@
 .header__logo  img {
     width: 250px;
     height:150px;
+    margin-right: -40px;
 }
 
 /*---------About Menu---------*/
@@ -53,11 +53,11 @@
         list-style-type: none;
         align-items: center;
 
+
         .ul__item_li {
-            margin: 10px;
+            margin: 5px;
 
             .ul__item_a{
-
                 display: flex;
                 font-weight: 600;
                 text-decoration: none;
@@ -122,7 +122,7 @@
      line-height: 80px;
      color: variable.$avocado-color;
      position: absolute;
-     top: 18px;
+     top: -3px;
      right: 298x;
      border-radius: 50%;
      font-size: 20px;
@@ -139,6 +139,10 @@
     padding-left: 30px;
     outline: none;
     border-radius: 15px;
+}
+
+.header__search{
+    position: relative;
 }
 
 /*----------Username Menu------*/
@@ -192,7 +196,7 @@
             cursor: pointer;
             transform: translateY(30px);
         }
-
+    
 
     }
 
@@ -210,6 +214,10 @@
         z-index: 2;
       
         
+    }
+
+    .cart__amount{
+        font-family: variable.$title-font;
     }
    
 
@@ -366,3 +374,54 @@
     
 }
 
+/*Media*/
+
+@media screen and (max-width: 1343px) {
+    .header__about_menu {
+        transform: translateX(10px);
+       
+        .nav {
+                .ul__item_li {
+                    margin: -2px;
+
+                }
+        
+
+                }
+
+       
+    }
+
+ 
+   .header__username_menu{
+    transform: translateX(10px);
+    justify-content:center;
+
+   }
+
+   
+
+
+
+}
+
+@media screen and (max-width: 965px){
+    .header__about_menu {
+        transform: translateX(-10px);
+    }
+
+}
+
+
+@media screen and (max-width: 924px){
+    .header__btn_ham{
+        display: block;
+    }
+
+    .header__about_menu {
+        display: none;
+    }
+
+
+
+}

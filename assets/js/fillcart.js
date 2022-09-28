@@ -102,7 +102,7 @@ export class previewCart {
             p.innerHTML= "You don't have avocados ";
             //Agregar al html 
             card.append(img,p);
-            preview.append(card)
+            preview.append(card);
 
          }   
       
