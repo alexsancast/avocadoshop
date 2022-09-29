@@ -41,7 +41,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     padding-left: 10px;
-    overflow: hidden;
+    
     
 
     &:hover{
@@ -147,3 +147,66 @@
     }
 }
 
+
+@media screen and (max-width: 965px){
+
+    .container {
+        column-gap:1px;
+        grid-template-columns:repeat(3,250px);
+
+        .container__card {
+            width: 230px;
+            height: 270px;
+            
+    
+            img{
+                width: 130px;
+                height:130px ;
+            }
+
+            .container__name_card{font-size: 13px }
+
+            .container__desc_card{font-size: 12px;}
+
+            .container__btn_card{
+                font-size: 13px;
+                width: 70px;
+                height: 30px;
+
+
+            }
+
+        
+
+
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 778px){
+
+    .container {
+        column-gap:1px;
+        grid-template-columns:repeat(2,250px);
+
+      
+    }
+
+
+}
+
+@media screen and (max-width: 520px){
+
+    .container {
+        column-gap:1px;
+        grid-template-columns:repeat(1,250px);
+
+      
+    }
+
+
+
+}

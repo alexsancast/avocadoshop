@@ -92,16 +92,14 @@ export class previewCart {
             //Contenedor para las carts
             let card = document.createElement("div");
             card.classList.add("preview__card_no");
-            //Imagen para el carrito 
-            let img = document.querySelector("img");
-            img.classList.add("preview__card_no_img");
-            img.src = "/assets/img/shopping-cart.gif"
+         
+        
             //Parrafo para el aviso 
             let p = document.createElement("h1");
             p.classList.add("preview__card_no_p");
             p.innerHTML= "You don't have avocados ";
             //Agregar al html 
-            card.append(img,p);
+            card.append(p);
             preview.append(card);
 
          }   

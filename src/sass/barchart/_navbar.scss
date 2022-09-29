@@ -28,8 +28,8 @@
     display: none;
 
     img{
-        width: 30px;
-        height: 30px;
+        width: 20px;
+        height: 20px;
     }
     
 }
@@ -152,9 +152,6 @@
     width: 150px;
     margin-right: 20px;
     transform: translateX(-70px);
-
-   
-       
    }
 
 .username_menu__profile {
@@ -194,7 +191,7 @@
         transform: translateY(32px);
         &:hover{
             cursor: pointer;
-            transform: translateY(30px);
+           
         }
     
 
@@ -235,10 +232,6 @@
     background-color: white;
     box-shadow: 1px 5px 5px 5px rgba(34,36,38,.15); 
     transition : visibility 0s, opacity 0.6s linear;
-
-
-   
-
 }
 
 .preview__card_no{
@@ -248,13 +241,10 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-
     .preview__card_no_img{
-
         width: 60px;
         height: 60px;
     }
-
     .preview__card_no_p{
         font-size: 18px;
     }
@@ -266,8 +256,6 @@
 
 }
 
-
-
 .preview__card_shop {
    display: grid;
    grid-template-columns: 200px 20px;
@@ -275,24 +263,21 @@
    column-gap: -40px;
    position: relative;
    background-color: white;
-
-   
-   
 }
+
 
 .preview__name {
     display: flex;
     align-items: center;
     grid-column: 1/2;
     grid-row: 1/2;
-
 }
 
 .card_shop__img {
     width: 75px;
     height: 75px;
-    
 }
+
 
 .card_shop__name {
    font-size: 12px;
@@ -379,17 +364,11 @@
 @media screen and (max-width: 1343px) {
     .header__about_menu {
         transform: translateX(10px);
-       
+
         .nav {
-                .ul__item_li {
-                    margin: -2px;
-
+                .ul__item_li { margin: -2px; }
+    
                 }
-        
-
-                }
-
-       
     }
 
  
@@ -399,27 +378,170 @@
 
    }
 
-   
-
-
-
 }
 
 @media screen and (max-width: 965px){
+
+    .header__logo{
+        img {
+
+            width: 200px;
+            height:130px;
+     
+
+        }
+    }
     .header__about_menu {
         transform: translateX(-10px);
+
+        .nav {
+            .ul__item_li { margin: -5px;
+
+                .ul__item_a {font-size: 12px;}
+            
+            
+            }
+
+           
+
+            }
     }
 
 }
 
+@media screen and (max-width: 840px){
+    .header__logo{
+        img {
 
-@media screen and (max-width: 924px){
-    .header__btn_ham{
-        display: block;
+            width: 170px;
+            height:110px;
+     
+
+        }
+    }
+    .header__about_menu {
+        transform: translateX(-10px);
+
+        .nav {
+            .ul__item_li { margin: -5px;
+
+                .ul__item_a {font-size: 11px;}
+            
+            
+            }
+
+           
+
+            }
     }
 
+
+    .header__search{
+
+        .search__btn { 
+             top: -4px;
+             right: 298x;
+             border-radius: 50%;
+             font-size: 17px;
+            
+              
+        
+        }
+       
+        input {
+            width:150px;
+            height: 25px;
+        }
+
+    }
+
+    .header__username_menu{
+        .profile__img{
+            width: 24px;
+            height:24px;
+        }
+
+        .cart__img{
+
+            width: 24px;
+            height:24px;
+        }
+        p{
+            font-size: 12px;
+        }
+
+
+
+    }
+}
+
+
+@media screen and (max-width: 745px){
+    .header__btn_ham{
+        display: block;
+        transform: translateX(5px);
+    }
     .header__about_menu {
         display: none;
+    }
+
+    .header__username_menu{
+        transform: translateX(-50px);
+
+        .username_menu__profile{
+            display: none;
+        }
+
+        .cart__img{
+            transform: translateY(-2px);
+            transform: translateX(40px);
+         }
+
+   
+
+     
+
+    }
+
+    .header__search{
+        transform: translateX(30px);
+  
+    }
+   
+}
+
+@media screen and (max-width: 660px){
+
+    .header__username_menu{
+        .cart__img{
+            transform: translateX(60px);
+         }
+
+    }
+    .header__search{
+        transform: translateX(45px);
+
+    }
+
+
+}
+
+@media screen and (max-width: 518px){
+
+    .header__logo{
+        transform: translateX(20px);
+    }
+
+    
+    .header__username_menu{
+        .cart__img{
+            transform: translateX(90px);
+         }
+
+    }
+    .header__search{
+        transform: translateX(60px);
+
     }
 
 
