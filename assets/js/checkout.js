@@ -10,6 +10,8 @@ const item = JSON.parse(localStorage.getItem('cart')) ;
 const amount = document.querySelector('.cart__amount');//cantidad de productos
 const contItems = document.querySelector(".container__items");
 const contCheckout = document.querySelector(".container__checkout");
+const myAccount = document.querySelector(".username_menu__p");
+const myAccountHam = document.querySelector (".username_menu__ham");
 
 //Pintar los datos en la pagina 
 window.addEventListener('DOMContentLoaded' , (event)=>{
@@ -38,10 +40,8 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
       quan.classList.add("items__quan");
       quan.innerHTML = ` x ${element.quantity}`;
       
-      //Cantidad X precio 
-      let quanPrice = document.createElement("p");
-      quanPrice.classList.add("items__quanprice");
-      quanPrice.innerHTML = priceFormat.formatPrice(item.map(elemt =>  elemt.quantity * elemt.price));
+  
+    
       //imagen close
       let close = document.createElement("img");
       close.classList.add("items__close");
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
       //Funciones 
       close.addEventListener("click" , (e)=>removeItem(e))
       //Agregar elementos al html
-      card.append(img ,name,price,quan,quanPrice,close);
+      card.append(img ,name,price,quan,close);
       contItems.append(card);
          });
       //contenedor subotal y precio
@@ -120,8 +120,9 @@ window.addEventListener('DOMContentLoaded' , (event)=>{
  //**--------------------------------------------- */
  
     //Cargar el usuario para mostrar
-    // let p = JSON.parse(sessionStorage.getItem("session"));
-    // myAccount.innerHTML =p.nameValue;
+    let p = JSON.parse(sessionStorage.getItem("session"));
+    myAccount.innerHTML = `Hi , ${ p.nameValue}`;
+    myAccountHam.innerHTML = `Hi , ${ p.nameValue}`;
  
     newCart.loadCart();
      

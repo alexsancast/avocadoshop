@@ -12,6 +12,7 @@ const container = document.querySelector(".container"); /// Contenedor principal
 const amount = document.querySelector('.cart__amount');//cantidad de productos
 const inputFind = document.querySelector(".search__input"); // Input para el buscador
 const myAccount = document.querySelector(".username_menu__p");
+const myAccountHam = document.querySelector (".username_menu__ham");
 
 
 //Llamar a la api para obetener los datos & cargar la pagina
@@ -175,9 +176,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
    //**--------------------------------------------- */
 
-        //Cargar el usuario para mostrar
-        // let p = JSON.parse(sessionStorage.getItem("session"));
-        // myAccount.innerHTML =p.nameValue;
+       //    Cargar el usuario para mostrar
+        let p = JSON.parse(sessionStorage.getItem("session"));
+        myAccount.innerHTML = `Hi , ${ p.nameValue}`;
+        myAccountHam.innerHTML = `Hi , ${ p.nameValue}`;
 
 
       newCart.loadCart();

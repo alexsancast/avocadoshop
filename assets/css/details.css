@@ -314,6 +314,10 @@
     transform: translateX(10px);
     justify-content: center;
   }
+  .username_menu__cart .cart__amount {
+    top: 25px;
+    right: 20px;
+  }
 }
 @media screen and (max-width: 965px) {
   .header__logo img {
@@ -387,6 +391,10 @@
   .header__search {
     transform: translateX(30px);
   }
+  .username_menu__cart .cart__amount {
+    top: -10px;
+    right: 18px;
+  }
 }
 @media screen and (max-width: 660px) {
   .header__username_menu .cart__img {
@@ -394,6 +402,10 @@
   }
   .header__search {
     transform: translateX(45px);
+  }
+  .username_menu__cart .cart__amount {
+    top: -10px;
+    right: -5px;
   }
 }
 @media screen and (max-width: 518px) {
@@ -405,6 +417,10 @@
   }
   .header__search {
     transform: translateX(60px);
+  }
+  .username_menu__cart .cart__amount {
+    top: -10px;
+    right: -35px;
   }
 }
 /*---------Footer------------------*/

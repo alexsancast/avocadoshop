@@ -12,6 +12,8 @@
           //Variables 
         const container = document.querySelector(".container");
         const containerAttributes = document.querySelector(".container__attributes");
+        const myAccount = document.querySelector(".username_menu__p");
+        const myAccountHam = document.querySelector (".username_menu__ham");
           //Seleccionar el contenedor de los atributos
         window.addEventListener('DOMContentLoaded', (event) => {
           
@@ -110,6 +112,9 @@
                amount.innerHTML = p.map (quali =>  quali.quantity ).reduce((coun , qual)=> coun + qual) ;   
            } else {console.log("carrito vacio")}
            newCart.loadCart();
+           let p = JSON.parse(sessionStorage.getItem("session"));
+           myAccount.innerHTML = `Hi , ${ p.nameValue}`;
+           myAccountHam.innerHTML = `Hi , ${ p.nameValue}`;
    
             
            

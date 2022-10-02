@@ -2,7 +2,10 @@
 import { previewCart } from "./fillcart.js";
 const newCart = new previewCart();
 
+
 const amount = document.querySelector(".cart__amount");
+const myAccount = document.querySelector(".username_menu__p");
+const myAccountHam = document.querySelector (".username_menu__ham");
 
 window.addEventListener('DOMContentLoaded', (event) => {
     //Cargar la cantidad en el carrito 
@@ -14,8 +17,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 //**--------------------------------------------- */
 
    //Cargar el usuario para mostrar
-   // let p = JSON.parse(sessionStorage.getItem("session"));
-   // myAccount.innerHTML =p.nameValue;
+   let p = JSON.parse(sessionStorage.getItem("session"));
+   myAccount.innerHTML = `Hi , ${ p.nameValue}`;
+   myAccountHam.innerHTML = `Hi , ${ p.nameValue}`;
 
    newCart.loadCart();
     
