@@ -5,6 +5,7 @@
 @use 'barchart/navbar';
 @use 'barchart/reset'; 
 @use 'barchart/footer';
+@use 'barchart/menuham';
 /*---Lammar los barchart---*/
 @include reset.format; // Reseteamos toda la pagina
 

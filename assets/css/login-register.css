@@ -193,5 +193,26 @@ main {
     transform: rotate(1turn);
   }
 }
+/*Media*/
+@media screen and (max-width: 804px) {
+  main {
+    margin-top: 50px;
+  }
+  .container__back_box {
+    max-width: 350px;
+    height: 300px;
+    flex-direction: column;
+    margin: auto;
+  }
+  .container__back_box div {
+    margin: 0;
+    position: absolute;
+  }
+  .container__login_register {
+    top: 90px;
+    left: -20px;
+    margin: auto;
+  }
+}
 
 /*# sourceMappingURL=login-register.css.map */

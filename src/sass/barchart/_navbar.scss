@@ -362,9 +362,9 @@
 /*Media*/
 
 @media screen and (max-width: 1343px) {
+
     .header__about_menu {
         transform: translateX(10px);
-
         .nav {
                 .ul__item_li { margin: -2px; }
     
@@ -376,8 +376,20 @@
     transform: translateX(10px);
     justify-content:center;
 
-   }
+ 
 
+
+    }
+
+    .username_menu__cart{
+        .cart__amount {
+            top: 25px;
+            right:20px;
+    
+        }
+    }
+
+  
 }
 
 @media screen and (max-width: 965px){
@@ -506,6 +518,16 @@
     .header__search{
         transform: translateX(30px);
   
+
+        
+    }
+
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right:18px;
+    
+        }
     }
    
 }
@@ -523,6 +545,16 @@
 
     }
 
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right:-5px;
+    
+        }
+
+
+
+}
 
 }
 
@@ -543,6 +575,18 @@
         transform: translateX(60px);
 
     }
+
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right:-35px;
+    
+        }
+
+
+
+}
+
 
 
 
