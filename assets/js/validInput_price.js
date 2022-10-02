@@ -1,27 +1,4 @@
 import Toastify from 'node_modules/toastify-js/src/toastify-es.js';
-
-
-//Validar Inputs & Correo
-// export class validInput {
-//     setSuccessFor(input) {
-//         const formControl = input.parentElement;
-//          formControl.className = 'form__control success';
-//                                      }
-    
-//     setErrorFor(input, message) {
-//             const formControl = input.parentElement;
-//             const small = formControl.querySelector('small');
-//             formControl.className = 'form__control error';
-//              small.innerText = message;
-//                                     }
-//      setErrorForEmail (email){
-//             let regax = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
-//             return  regax.test(email);
-//                          }
-                                        
-    
-// }
-
 export class validInput {    
     setErrorFor( input ,message) {
         Toastify({
