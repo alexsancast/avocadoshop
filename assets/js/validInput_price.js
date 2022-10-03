@@ -1,4 +1,4 @@
-import Toastify from 'node_modules/toastify-js/src/toastify-es.js';
+import Toastify from '/node_modules/toastify-js/src/toastify-es.js';
 export class validInput {    
     setErrorFor( input ,message) {
         Toastify({
