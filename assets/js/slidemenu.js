@@ -6,6 +6,10 @@ const btnHam = document.querySelector(".header__btn_ham");
 const slideMenu = document.querySelector(".menu_ham");
 const closeMenu = document.querySelector(".nav__img");
 
+//Carrito 
+const preview  = document.querySelector(".preview");
+const cartImg = document.querySelector(".cart__img");
+
 
 //Mostrar Menu
 
@@ -41,4 +45,17 @@ slideMenu.addEventListener("click" , ()=>{
 
     }
 })
+
+//Barra para el carrito 
+cartImg.addEventListener("click" ,()=>{
+
+    if (preview.style.visibility == "hidden") {
+        preview.style.visibility = "visible";
+        preview.style.opacity = "1";
+        
+
+    }else { preview.style.visibility ="hidden"}
+    
+})
+
 
