@@ -4,76 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/login-register.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <title>Welcome4</title>
+    <title>Welcome</title>
 </head>
 <body>
-
-    <div class="container">
-       <main >
-
+      
+            <form action="" class="form">
+                <h1 class="form__title">Login </h1>  
+                <p class="form__paragraph">Don't have an account yet? <a href="/public/register.html">click here</a></p>  
+                
+                <div class="form__container">
+                    <div class="form__control">
+                        <input class="form__input" id="email" type="text" placeholder="">
+                        <label type="password" class="form__label" for="emial">Email:</label>
+                        <span class="form__line"></span>
+                        <img class="form__img" src="assets/img/cross.png" alt="" >
+                    </div>
     
-        <div class="container__back_box">
-            <div class="back_box__login">
-                <h3>Do you already have an account ?</h3>
-                <p>Log in to enter the page</p>
-                <button id="back_box__btn">Start Login</button>
-            </div>
-
-
-            <div class="back_box__register">
-                <h3>You still don't have an account?</h3>
-                <p>Register so you can log in </p>
-                <button id="back_box_btn2">Start Register</button>
-            </div>
-
-        </div>
-
-
     
-        <div class="container__login_register">
-            <form action="" class="form__login">
-                <h1>Login </h1>   
-                <div class="form__control">
-                    <input id="email" type="text" placeholder="Email">
-                    <img class="form_img" src="assets/img/cross.png" alt="" >
-                </div>
-                <div class="form__control">
-                    <input id="password" type="password" placeholder="Password">
-                    <img class="form_img" src="assets/img/cross.png" alt="">
-                </div>
-                <button class="login__btn">Login</button>
-                <a class="login_register__a" href="/">Forgot your password ?</a>
-            </form>
-            <form action="" class="form__register">
-                <h1>Register</h1>
-                <div class="form__control">
-                    <input id="name" type="text" placeholder="Full Name">
-                    <img class="form_img" src="assets/img/cross.png" alt="" >
-                </div>
-                <div class="form__control">
-                    <input id="emailr" type="text" placeholder="Email">
-                    <img class="form_img" src="assets/img/cross.png" alt="" >
-                </div>
-                 <div class="form__control">
-                    <input id="passwordr" type="password" placeholder="Password">
-                    <img class="form_img" src="assets/img/cross.png" alt="" >
-                 </div>
-                <div class="form__control">
-                    <input id="passwordc" type="password" placeholder="Confirm Password">
-                    <img class="form_img" src="assets/img/cross.png" alt="" >
-                </div>
-                <button class="register__btn">Register</button>
-            </form>
-        </div>
+                    <div class="form__control">
+                        <input class="form__input" id="password" type="password" placeholder="">
+                        <label type="password" class="form__label" for="password">Password:</label>
+                        <span class="form__line"></span>
+                        <img class="form__img" src="assets/img/cross.png" alt="">
+                    </div>
 
-        
-    </div>
-    <script src="assets/js/transition.js"></script>
-    <script src="assets/js/login-register.js" type="module"></script>
+                    <button id="login__btn" class="form__btn">Login</button>
+                    <!-- <a class="form__a" href="/">Forgot your password ?</a> -->
+    
+                </div>
+             
 
-</main>
+               
+            </form>
+          
+
+    <script src="assets/js/login.js" type="module"></script>
+    <script src="/assets/js/loading.js"></script>
+
+
 </body>
 
 </html>

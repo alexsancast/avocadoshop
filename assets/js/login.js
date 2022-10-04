@@ -10,8 +10,8 @@ const email = document.getElementById ("emailr");
 const passwordr = document.getElementById("passwordr");
 const passwordc = document.getElementById("passwordc");
 /* Botones para los eventos*/
-const btnLogin = document.querySelector('.login__btn');
-const btnRegister = document.querySelector('.register__btn');
+const btnLogin = document.getElementById('login__btn');
+const btnRegister = document.getElementById('register__btn');
 //Variables para validad la entrada del localstorage
 let fullN = '';
 let mail = '';
