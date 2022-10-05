@@ -574,6 +574,10 @@
     .header__search{
         transform: translateX(60px);
 
+        
+
+        
+
     }
 
     .username_menu__cart{
@@ -587,6 +591,71 @@
 
 }
 
+
+
+
+}
+
+@media screen and (max-width: 463px){
+
+    .header__logo{
+        transform: translateX(20px);
+    }
+
+    
+    .header__username_menu{
+        .cart__img{
+            transform: translateX(75px);
+         }
+
+    }
+    .header__search{
+        transform: translateX(60px);
+
+        input {
+            width:100px;
+            height: 25px;
+        }
+
+    }
+
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right:-15px;
+    
+        }
+
+
+
+}
+
+
+}
+
+@media screen and (max-width: 418px){
+
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right: -20px;
+    
+        }
+    }
+
+
+
+}
+
+@media screen and (max-width: 410px){
+
+    .username_menu__cart{
+        .cart__amount {
+            top: -10px;
+            right: -25px;
+    
+        }
+    }
 
 
 

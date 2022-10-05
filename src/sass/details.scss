@@ -210,3 +210,46 @@
 
 
 }
+
+@media screen and (max-width: 460px){
+
+
+    .container__card {
+        grid-template-columns: 350px ;
+        grid-template-rows: 1px 350px 1fr 60px 60px 60px 60px;
+        .container__name {
+            font-size: 24px;
+       
+        }
+
+        img{
+       
+           width: 380px;
+           height: 380px;
+        }
+
+        .container__desc {font-size: 15px; }
+
+        .container__btn {
+            font-size: 14px;
+            grid-row:6/7 ;
+        }
+
+        .container__add_amount {
+            input{
+                width: 40px;
+                height: 20px;
+           }   
+           
+        }
+        
+    
+        
+
+    }
+
+
+}
+
+
+

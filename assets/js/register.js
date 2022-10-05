@@ -114,6 +114,8 @@ function register() {
   ///////---Validar el correo si existe en la base de datos---////
   if (nameR === true && lname === true && mail === true && pass === true && passC === true) {
     let test;
+   
+  
     if (localStorage.getItem("user") !== null) {
       test = JSON.parse(localStorage.getItem("user"));
       const value = test.some((item) => item.emailValue === emailValue);
@@ -134,7 +136,9 @@ function register() {
           email.value = "";
           passwordr.value = "";
           passwordc.value = "";
+          window.location.href = "/index.html";
         }, 2000);
+
       }
     } else {
       user.push({ nameValue, lnameValue, emailValue, passwordrValue });
@@ -151,6 +155,7 @@ function register() {
         email.value = "";
         passwordr.value = "";
         passwordc.value = "";
+        window.location.href = "/index.html";
       }, 2000);
     }
   }
