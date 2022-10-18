@@ -2,7 +2,7 @@
 /*Fonts / typography*/
 /*Font Size*/
 body {
-  background-image: url(/assets/img/Fondo.jpg);
+  background-image: url("../assets/img/Fondo.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: flex;
